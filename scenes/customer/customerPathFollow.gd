@@ -34,3 +34,6 @@ func _on_timer_timeout():
 func _on_continue_signal():
 	stopped = false  # Allow movement again
 	leave = true
+
+func _on_order_recieved_signal():
+	emit_signal("continue_signal")
