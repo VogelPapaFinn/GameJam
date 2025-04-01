@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b5g78ehpdy51c"]
+
+[ext_resource type="FontFile" uid="uid://cntuisd1j68yb" path="res://res/Pixel Primitive.ttf" id="1_waim7"]
+
+[resource]
+font = ExtResource("1_waim7")
+font_size = 9

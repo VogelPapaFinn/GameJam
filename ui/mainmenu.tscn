@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqo7e2km8g2h5"]
+
+[ext_resource type="Texture2D" uid="uid://b5mhyna6dowog" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[1] Normal.png" id="1_187hc"]
+[ext_resource type="Texture2D" uid="uid://s8pg3i7q7it1" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[2] Clicked.png" id="2_4amms"]
+[ext_resource type="Texture2D" uid="uid://b2kyq1nnwxpqu" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[3] Hover.png" id="3_uvrly"]
+[ext_resource type="LabelSettings" uid="uid://b5g78ehpdy51c" path="res://ui/new_label_settings.tres" id="4_7yvvn"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_187hc")
+texture_pressed = ExtResource("2_4amms")
+texture_hover = ExtResource("3_uvrly")
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/MarginContainer/VBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START"
+label_settings = ExtResource("4_7yvvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_187hc")
+texture_pressed = ExtResource("2_4amms")
+texture_hover = ExtResource("3_uvrly")
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/MarginContainer/VBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "OPTIONS"
+label_settings = ExtResource("4_7yvvn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_187hc")
+texture_pressed = ExtResource("2_4amms")
+texture_hover = ExtResource("3_uvrly")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer/MarginContainer/VBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+label_settings = ExtResource("4_7yvvn")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -17,9 +17,7 @@ func _process(_delta: float) -> void:
 		var current_area : Area2D
 		if len(areas) == 1 :
 			current_area= areas[0]
-		else:
-			pass
-		if current_area.is_in_group("interact"):
+		if current_area and current_area.is_in_group("interact"):
 			if current_inventory.get_count() != 0:
 				current_inventory.set_item(current_area.interact(current_inventory.get_item()))
 
