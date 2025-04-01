@@ -19,6 +19,8 @@ func _process(delta):
 			start_timer()  # Start the timer when reaching the stop point
 
 func start_timer():
+	# Generate order
+	var order = GenerateOrder.generate_order()
 	var timer = Timer.new()
 	timer.wait_time = wait_time
 	timer.one_shot = true  # Run only once

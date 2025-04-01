@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bsap12bbhuipr"
+path="res://.godot/imported/shell_gold.aseprite-25b2ca7c62495c92b73d48bca495db75.res"
+
+[deps]
+
+source_file="res://sprites/items/shell_gold.aseprite"
+dest_files=["res://.godot/imported/shell_gold.aseprite-25b2ca7c62495c92b73d48bca495db75.res"]
+
+[params]
+

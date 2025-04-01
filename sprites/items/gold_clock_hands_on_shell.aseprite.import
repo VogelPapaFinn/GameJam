@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bx3shxq1wfcg1"
+path="res://.godot/imported/gold_clock_hands_on_shell.aseprite-7deb5be17e3a9ad3443c67cf00ab8881.res"
+
+[deps]
+
+source_file="res://sprites/items/gold_clock_hands_on_shell.aseprite"
+dest_files=["res://.godot/imported/gold_clock_hands_on_shell.aseprite-7deb5be17e3a9ad3443c67cf00ab8881.res"]
+
+[params]
+
