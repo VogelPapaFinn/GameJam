@@ -6,8 +6,10 @@
 [node name="MainNode" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_pylub")]
-position = Vector2(100, 100)
+z_index = 2
+position = Vector2(691, 401)
 motion_mode = 1
 PLAYER_SPEED = 10000
 
 [node name="Level" parent="." instance=ExtResource("2_qo02p")]
+z_index = 1
