@@ -2,7 +2,7 @@ extends PathFollow2D
 
 signal continue_signal  # Define a signal for resuming movement
 
-var speed = 100  # Movement speed
+@export var speed = 100  # Movement speed
 var stopped = false
 var leave = false
 var stop_point = 618  # The position where the character stops
@@ -11,7 +11,16 @@ var wait_time = 3.0  # Time to wait before continuing
 func _ready():
 	connect("continue_signal", Callable(self, "_on_continue_signal"))
 
+func start_moving():
+	set_process(true)  # Enable movement
+
 func _process(delta):
+	#if path_follow and not stopped:
+		#path_follow.progress += speed * delta # Move along the path
+		## Stop at a certain point on the path
+	#if path_follow.progress >= stop_point and not stopped:
+		#stopped = true
+		#start_timer()
 	if not stopped:
 		progress += speed * delta  # Continue moving along the path
 		if progress >= stop_point and not leave:
@@ -35,5 +44,5 @@ func _on_continue_signal():
 	stopped = false  # Allow movement again
 	leave = true
 
-func _on_order_recieved_signal():
+func _on_order_received_signal():
 	emit_signal("continue_signal")
