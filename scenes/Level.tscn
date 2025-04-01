@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://4sq3d5yfy7v1"]
+[gd_scene load_steps=6 format=4 uid="uid://t80ofe71ecdb"]
 
-[ext_resource type="TileSet" uid="uid://mr5y08iibw8x" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
+[ext_resource type="TileSet" uid="uid://da3m3hp55ku0o" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
 [ext_resource type="Texture2D" uid="uid://bpa2gx1opfjgi" path="res://sprites/ItemBorder.png" id="1_uhqny"]
 [ext_resource type="Texture2D" uid="uid://b1oeb7f4dhti" path="res://sprites/TestItem.png" id="2_k5jlv"]
 [ext_resource type="Texture2D" uid="uid://c86gg282op28j" path="res://sprites/TimeBarPlaceholder.png" id="3_6vs76"]
