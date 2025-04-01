@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwiclkrfmwisa"]
+
+[ext_resource type="Script" uid="uid://b74hsa3ivg7fs" path="res://scenes/machine/trashcan.gd" id="1_vn88i"]
+[ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_fu33r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w5q88"]
+
+[node name="Trashcan" type="Node2D"]
+script = ExtResource("1_vn88i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_fu33r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_w5q88")

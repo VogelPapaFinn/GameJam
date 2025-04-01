@@ -4,22 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://dg2kt5gtq5o03" path="res://tmp_player.png" id="2_g2els"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
-size = Vector2(20, 7)
+size = Vector2(13, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(9, 17)
 
 [node name="Player" type="CharacterBody2D"]
+y_sort_enabled = true
 scale = Vector2(4, 4)
 script = ExtResource("1_3vyb7")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10.5)
+y_sort_enabled = true
+position = Vector2(-0.5, 10.5)
 shape = SubResource("RectangleShape2D_3vyb7")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture = ExtResource("2_g2els")
 
 [node name="PickupArea" type="Area2D" parent="."]
+y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+y_sort_enabled = true
+position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_g2els")
