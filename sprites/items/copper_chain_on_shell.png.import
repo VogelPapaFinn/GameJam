@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmxnyfteiq1pm"
-path="res://.godot/imported/gold_clock_hands.png-d94e068998e92087fbb6c1cd73aeef5f.ctex"
+uid="uid://c88lgsfmo6xcu"
+path="res://.godot/imported/copper_chain_on_shell.png-52bc644eaa21d351ceaedec873c69770.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/gold_clock_hands.png"
-dest_files=["res://.godot/imported/gold_clock_hands.png-d94e068998e92087fbb6c1cd73aeef5f.ctex"]
+source_file="res://sprites/items/copper_chain_on_shell.png"
+dest_files=["res://.godot/imported/copper_chain_on_shell.png-52bc644eaa21d351ceaedec873c69770.ctex"]
 
 [params]
 

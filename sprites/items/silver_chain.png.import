@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmxnyfteiq1pm"
-path="res://.godot/imported/gold_clock_hands.png-d94e068998e92087fbb6c1cd73aeef5f.ctex"
+uid="uid://bhxp0vu566gcc"
+path="res://.godot/imported/silver_chain.png-a75ecf6d31c380a6351916a0541dcaa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/items/gold_clock_hands.png"
-dest_files=["res://.godot/imported/gold_clock_hands.png-d94e068998e92087fbb6c1cd73aeef5f.ctex"]
+source_file="res://sprites/items/silver_chain.png"
+dest_files=["res://.godot/imported/silver_chain.png-a75ecf6d31c380a6351916a0541dcaa2.ctex"]
 
 [params]
 

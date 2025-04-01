@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://t80ofe71ecdb"]
+[gd_scene load_steps=7 format=4 uid="uid://t80ofe71ecdb"]
 
 [ext_resource type="PackedScene" uid="uid://cwiclkrfmwisa" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
 [ext_resource type="TileSet" uid="uid://da3m3hp55ku0o" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
