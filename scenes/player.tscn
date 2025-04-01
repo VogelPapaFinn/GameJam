@@ -7,7 +7,7 @@
 size = Vector2(13, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(9, 17)
+size = Vector2(13.5, 9.25)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -28,5 +28,7 @@ y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 y_sort_enabled = true
-position = Vector2(0.5, 1.5)
+position = Vector2(0, -0.625)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Inventory_Display" type="Sprite2D" parent="."]
