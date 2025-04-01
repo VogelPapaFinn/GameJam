@@ -15,14 +15,18 @@ scale = Vector2(4, 4)
 script = ExtResource("1_3vyb7")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(-0.5, 10.5)
 shape = SubResource("RectangleShape2D_3vyb7")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
 texture = ExtResource("2_g2els")
 
 [node name="PickupArea" type="Area2D" parent="."]
+y_sort_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+y_sort_enabled = true
 position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_g2els")
