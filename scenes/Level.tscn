@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://4sq3d5yfy7v1"]
+[gd_scene load_steps=7 format=4 uid="uid://t80ofe71ecdb"]
 
-[ext_resource type="TileSet" uid="uid://mr5y08iibw8x" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
+[ext_resource type="TileSet" uid="uid://da3m3hp55ku0o" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
 [ext_resource type="Texture2D" uid="uid://bpa2gx1opfjgi" path="res://sprites/ItemBorder.png" id="1_uhqny"]
 [ext_resource type="Texture2D" uid="uid://b1oeb7f4dhti" path="res://sprites/TestItem.png" id="2_k5jlv"]
 [ext_resource type="Texture2D" uid="uid://c86gg282op28j" path="res://sprites/TimeBarPlaceholder.png" id="3_6vs76"]
 [ext_resource type="Texture2D" uid="uid://daeg7h7pjg7km" path="res://sprites/TimeBarContentPlaceholder.png" id="4_kl8ac"]
+[ext_resource type="FontFile" uid="uid://cntuisd1j68yb" path="res://res/Pixel Primitive.ttf" id="6_dke22"]
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
@@ -22,7 +23,7 @@ tile_set = ExtResource("1_qifjx")
 [node name="GUIRoot" type="Node2D" parent="."]
 
 [node name="ItemBorder" type="Sprite2D" parent="GUIRoot"]
-position = Vector2(632, 668)
+position = Vector2(1202, 165)
 scale = Vector2(2, 2)
 texture = ExtResource("1_uhqny")
 
@@ -57,13 +58,16 @@ patch_margin_bottom = 16
 
 [node name="Label" type="Label" parent="GUIRoot/TimeBarBorder"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.228571
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.914286
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 24
 text = "3:54"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
