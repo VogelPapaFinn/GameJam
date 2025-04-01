@@ -28,7 +28,6 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-    var direction = Input.get_vector("Left", "Right", "Up", "Down")
-    velocity = direction * PLAYER_SPEED *delta
-    move_and_slide()
-
+	var direction = Input.get_vector("Left", "Right", "Up", "Down")
+	velocity = direction * PLAYER_SPEED *delta
+	move_and_slide()

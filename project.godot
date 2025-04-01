@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="ClockWork"
+run/main_scene="uid://d044nb2wecjpo"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Scenemanager="*res://global/scenemanager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
 
 [input]
 
