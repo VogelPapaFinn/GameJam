@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh0h7unccj8vu"
-path="res://.godot/imported/silver_crate.png-ac4db037aa6318070acc8e0678ac2f96.ctex"
+uid="uid://cumwc5flg3wub"
+path="res://.godot/imported/pressing_machine.png-8c93a977af8b05144e4247135cad9820.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/interactables/silver_crate.png"
-dest_files=["res://.godot/imported/silver_crate.png-ac4db037aa6318070acc8e0678ac2f96.ctex"]
+source_file="res://sprites/interactables/pressing_machine.png"
+dest_files=["res://.godot/imported/pressing_machine.png-8c93a977af8b05144e4247135cad9820.ctex"]
 
 [params]
 
