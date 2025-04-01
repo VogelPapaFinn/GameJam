@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d3bs13r034wk3"
+path="res://.godot/imported/gold_crate.aseprite-77fe2f6321bcb20f1f0e01ddb2be6c15.res"
+
+[deps]
+
+source_file="res://sprites/interactables/gold_crate.aseprite"
+dest_files=["res://.godot/imported/gold_crate.aseprite-77fe2f6321bcb20f1f0e01ddb2be6c15.res"]
+
+[params]
+

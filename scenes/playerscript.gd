@@ -6,6 +6,7 @@ enum Direction {LEFT, RIGHT, UP, DOWN}
 enum Moving {IDLE, MOVING }
 
 var current_inventory: inventory
+const inventory_display_position = Vector2(1202, 165)
 
 func _ready() -> void:
 	Scenemanager.player = self
@@ -18,9 +19,16 @@ func _process(_delta: float) -> void:
 		if len(areas) == 1 :
 			current_area= areas[0]
 		if current_area and current_area.is_in_group("interact"):
-			if current_inventory.get_count() != 0:
-				current_inventory.set_item(current_area.interact(current_inventory.get_item()))
-
+			if current_inventory.get_count() != 0 or current_area.is_in_group("trash"):
+				var current_item = current_inventory.get_item()
+				var new_item = current_area.interact(current_item)
+				current_inventory.set_item(new_item)
+	var current_item = current_inventory.get_item()
+	if current_item:
+		$Inventory_Display.global_position = inventory_display_position
+		$Inventory_Display.texture = current_item.get_sprite()
+	else:
+		$Inventory_Display.texture = null
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")

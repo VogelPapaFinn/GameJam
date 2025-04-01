@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bapnk7hw6ycld"
+path="res://.godot/imported/copper_chain.aseprite-2ea2db31988e1b9b966cf50e3666f2e9.res"
+
+[deps]
+
+source_file="res://sprites/items/copper_chain.aseprite"
+dest_files=["res://.godot/imported/copper_chain.aseprite-2ea2db31988e1b9b966cf50e3666f2e9.res"]
+
+[params]
+
