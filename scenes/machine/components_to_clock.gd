@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Machine
 
 func use(prod : Clock_product) -> Finished_clock:
     var new_clock = Finished_clock.new()
