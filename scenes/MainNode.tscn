@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://o77vmuxh1tly" path="res://scenes/player.tscn" id="1_pylub"]
 [ext_resource type="PackedScene" uid="uid://t80ofe71ecdb" path="res://scenes/Level.tscn" id="2_qo02p"]
-[ext_resource type="Script" uid="uid://c5a8r7h5wbeo8" path="res://scenes/customerPathFollow.gd" id="3_i2bhx"]
-[ext_resource type="PackedScene" uid="uid://bigv81srxxc1r" path="res://scenes/customer.tscn" id="3_qo02p"]
+[ext_resource type="Script" uid="uid://c5a8r7h5wbeo8" path="res://scenes/customer/customerPathFollow.gd" id="3_i2bhx"]
+[ext_resource type="PackedScene" uid="uid://bigv81srxxc1r" path="res://scenes/customer/customer.tscn" id="3_qo02p"]
 
 [sub_resource type="Curve2D" id="Curve2D_pylub"]
 _data = {
