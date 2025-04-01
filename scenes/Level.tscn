@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmxun2h2lada2"]
+[gd_scene load_steps=6 format=3 uid="uid://ceuqi42vmkbmq"]
 
 [ext_resource type="Texture2D" uid="uid://bpa2gx1opfjgi" path="res://sprites/ItemBorder.png" id="1_uhqny"]
 [ext_resource type="Texture2D" uid="uid://b1oeb7f4dhti" path="res://sprites/TestItem.png" id="2_k5jlv"]
+[ext_resource type="Texture2D" uid="uid://c86gg282op28j" path="res://sprites/TimeBarPlaceholder.png" id="3_6vs76"]
+[ext_resource type="Texture2D" uid="uid://daeg7h7pjg7km" path="res://sprites/TimeBarContentPlaceholder.png" id="4_kl8ac"]
 
 [sub_resource type="TileSet" id="TileSet_q3wo1"]
 
@@ -10,11 +12,48 @@
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_q3wo1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="GUIRoot" type="Node2D" parent="."]
+
+[node name="ItemBorder" type="Sprite2D" parent="GUIRoot"]
 position = Vector2(632, 668)
 scale = Vector2(2, 2)
 texture = ExtResource("1_uhqny")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+[node name="ItemBorderContent" type="Sprite2D" parent="GUIRoot/ItemBorder"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_k5jlv")
+
+[node name="TimeBarBorder" type="NinePatchRect" parent="GUIRoot"]
+offset_left = 128.0
+offset_top = 32.0
+offset_right = 1152.0
+offset_bottom = 86.0
+texture = ExtResource("3_6vs76")
+region_rect = Rect2(0, 0, 48, 32)
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="TimeBarContent" type="NinePatchRect" parent="GUIRoot/TimeBarBorder"]
+layout_mode = 0
+offset_right = 831.0
+offset_bottom = 54.0
+texture = ExtResource("4_kl8ac")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Label" type="Label" parent="GUIRoot/TimeBarBorder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "3:54"
+horizontal_alignment = 1
+vertical_alignment = 1
