@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bpxmkoiqchvfh"
+path="res://.godot/imported/silver_clock_hands.aseprite-e81644eb2ebef887060cf713cba35974.res"
+
+[deps]
+
+source_file="res://sprites/items/silver_clock_hands.aseprite"
+dest_files=["res://.godot/imported/silver_clock_hands.aseprite-e81644eb2ebef887060cf713cba35974.res"]
+
+[params]
+

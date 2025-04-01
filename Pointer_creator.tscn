@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyyujlbg5vgsu"]
+[gd_scene load_steps=6 format=3 uid="uid://cyyujlbg5vgsu"]
 
 [ext_resource type="Script" uid="uid://cpkg33td4evke" path="res://scenes/machine/pointer_creator.gd" id="1_8u0cy"]
+[ext_resource type="Texture2D" uid="uid://4rawc3pcj3r6" path="res://ui/pointer_creator.png" id="2_5wsg3"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_8u0cy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1vos"]
@@ -14,6 +15,7 @@ script = ExtResource("1_8u0cy")
 shape = SubResource("RectangleShape2D_k1vos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5wsg3")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

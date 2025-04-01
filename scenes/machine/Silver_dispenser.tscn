@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvs4hniswe3od"]
+
+[ext_resource type="Script" uid="uid://tgi1gmyeui6q" path="res://scenes/machine/Silver_dispenser.gd" id="1_sqrnn"]
+[ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_lg7ph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwoo"]
+
+[node name="Silver_dispenser" type="StaticBody2D"]
+script = ExtResource("1_sqrnn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_lg7ph")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("RectangleShape2D_xjn0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jnwoo")

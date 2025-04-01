@@ -1,5 +1,8 @@
 extends StaticBody2D
 
+func _ready():
+    $InteractionArea.machine = self
+
 func use(usable : Usable) -> Raw_material:
     if !usable:
         return null
