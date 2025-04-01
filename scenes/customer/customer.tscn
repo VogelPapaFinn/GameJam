@@ -235,7 +235,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_d4wcg")
 animation = &"Walking"
 autoplay = "Walking"
-frame_progress = 0.778205
+frame_progress = 0.754734
 offset = Vector2(0, -32)
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
