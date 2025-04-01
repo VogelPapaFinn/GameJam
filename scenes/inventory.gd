@@ -23,4 +23,4 @@ func place() -> Resource:
     var tmp = current_item
     current_item = null
     inventory_empty = true
-    return tmp 
+    return tmp
