@@ -1,5 +1,5 @@
 Alles was man aufheben kann: Usable
 Rohe Materialien (Stahl, Gold, etc.): raw_material
-Verarbeitete Meterialien (Pointer, wristband etc.): Componend
-Zusammengesteckte Sachen: Product
-Fertige Uhr: Clock
+Verarbeitete Meterialien (Pointer, wristband etc.): clock_component
+Zusammengesteckte Sachen: Clock_product
+Fertige Uhr: Finished_Clock

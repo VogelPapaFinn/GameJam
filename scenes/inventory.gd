@@ -1,26 +1,27 @@
 class_name inventory extends Node
 
-var current_item : Resource
-var inventory_empty : bool 
-
-func _init() -> void:
-    inventory_empty = true
+var current_item : Usable 
 
 func get_count() -> int:
-    if inventory_empty:
+    if current_item:
         return 0
     else:
         return 1
 
-func get_resource() -> Resource:
+func get_resource() -> Usable:
     return current_item
 
-func pickup(r : Resource) -> void:
+func pickup(r : Usable) -> void:
     current_item = r
-    inventory_empty = false
+    current_item = null
 
 func place() -> Resource:
     var tmp = current_item
     current_item = null
-    inventory_empty = true
     return tmp
+    
+func get_item() -> Usable:
+    return current_item
+
+func set_item(usable : Usable):
+    current_item = usable
