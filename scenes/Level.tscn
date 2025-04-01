@@ -27,7 +27,7 @@ texture = ExtResource("2_k5jlv")
 offset_left = 128.0
 offset_top = 32.0
 offset_right = 1152.0
-offset_bottom = 86.0
+offset_bottom = 67.0
 texture = ExtResource("3_6vs76")
 region_rect = Rect2(0, 0, 48, 32)
 patch_margin_left = 16
@@ -36,9 +36,12 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="TimeBarContent" type="NinePatchRect" parent="GUIRoot/TimeBarBorder"]
-layout_mode = 0
-offset_right = 831.0
-offset_bottom = 54.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("4_kl8ac")
 patch_margin_left = 16
 patch_margin_top = 16
