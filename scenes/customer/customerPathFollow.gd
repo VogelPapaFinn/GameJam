@@ -105,7 +105,7 @@ func start_timer():
 func _on_timer_timeout():
 	Scenemanager.star_manager.customer_left_angry()
 	character.change_state(CustomerState.CUSTOMERSTATE.ANGRYWALKING)
-	emit_signal("continue_si_on_order_received_signalgnal")  # Emit the signal to resume movement
+	emit_signal("continue_signal")  # Emit the signal to resume movement
 
 func _on_continue_signal():
 	stopped = false  # Allow movement again
