@@ -35,7 +35,6 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_kapbw")
 
 [node name="Loading_bar" parent="." instance=ExtResource("4_f0k10")]
-visible = true
 offset_left = -16.0
 offset_top = -54.0
 offset_right = -16.0

@@ -35,7 +35,6 @@ one_shot = true
 [node name="Finish_position" type="Node2D" parent="."]
 
 [node name="Loading_bar" parent="." instance=ExtResource("4_dkw2c")]
-visible = true
 offset_left = -16.0
 offset_top = -53.0
 offset_right = -16.0
