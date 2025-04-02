@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ntni7mool28i"
+path="res://.godot/imported/player_right_idle_holding_item-Sheet.aseprite-6ec8d925620458ca3420e9cd7ef84894.res"
+
+[deps]
+
+source_file="res://sprites/player/player_right_idle_holding_item-Sheet.aseprite"
+dest_files=["res://.godot/imported/player_right_idle_holding_item-Sheet.aseprite-6ec8d925620458ca3420e9cd7ef84894.res"]
+
+[params]
+
