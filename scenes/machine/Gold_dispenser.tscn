@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cc7wpdpqltvff"]
+
+[ext_resource type="Script" uid="uid://bu74lpbrsmlw2" path="res://scenes/machine/Gold_dispenser.gd" id="1_xtr0u"]
+[ext_resource type="Texture2D" uid="uid://b7njituecnxr1" path="res://sprites/interactables/gold_crate.png" id="2_4btkw"]
+[ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_vkety"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
+size = Vector2(42, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwoo"]
+size = Vector2(25, 26)
+
+[node name="Gold_dispenser" type="StaticBody2D"]
+script = ExtResource("1_xtr0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4btkw")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_vkety")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_xjn0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_jnwoo")

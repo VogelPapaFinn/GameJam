@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4mkx2udlhrub"]
+
+[ext_resource type="Script" uid="uid://bseb1tlvn2d0p" path="res://scenes/machine/Copperl_dispenser.gd" id="1_plxs6"]
+[ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_o5vkn"]
+[ext_resource type="Texture2D" uid="uid://bx66ej7pwptg2" path="res://sprites/interactables/copper_crate.png" id="2_qwgw5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
+size = Vector2(36, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwoo"]
+size = Vector2(25, 26)
+
+[node name="Copper_dispenser" type="StaticBody2D"]
+script = ExtResource("1_plxs6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qwgw5")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("2_o5vkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_xjn0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_jnwoo")

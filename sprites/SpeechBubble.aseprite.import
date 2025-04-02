@@ -2,7 +2,11 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
+<<<<<<< HEAD
 uid="uid://dkvaeevsxcl8m"
+=======
+uid="uid://ydy0rscufhrp"
+>>>>>>> origin/main
 path="res://.godot/imported/SpeechBubble.aseprite-226a73717fefc7f8ef3ea33baac8c7c0.res"
 
 [deps]

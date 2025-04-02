@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://dhttpnmdmapbm"
+=======
+uid="uid://bx6no1e5bgpqy"
+>>>>>>> origin/main
 path="res://.godot/imported/silver_clock_hands.png-502fd40891c89f1d26a81359b78eff38.ctex"
 metadata={
 "vram_texture": false

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cq8lhdga1yapo"
+path="res://.godot/imported/copper_lump.aseprite-70d685012681c46ef3561b541b743b17.res"
+
+[deps]
+
+source_file="res://sprites/items/copper_lump.aseprite"
+dest_files=["res://.godot/imported/copper_lump.aseprite-70d685012681c46ef3561b541b743b17.res"]
+
+[params]
+

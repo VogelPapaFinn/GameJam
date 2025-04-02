@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://byy7x3jxae8h8"
+path="res://.godot/imported/copper_clock_hands_on_shell.aseprite-49fc6f4bd5d1052db13ac4c462eb4dd5.res"
+
+[deps]
+
+source_file="res://sprites/items/copper_clock_hands_on_shell.aseprite"
+dest_files=["res://.godot/imported/copper_clock_hands_on_shell.aseprite-49fc6f4bd5d1052db13ac4c462eb4dd5.res"]
+
+[params]
+

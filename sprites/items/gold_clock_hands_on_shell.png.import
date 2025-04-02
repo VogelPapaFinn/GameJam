@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ba7s3t2wmbncc"
+=======
+uid="uid://ci66je0ldo80q"
+>>>>>>> origin/main
 path="res://.godot/imported/gold_clock_hands_on_shell.png-cafadfec9ec72edec8119e9976dc98f2.ctex"
 metadata={
 "vram_texture": false

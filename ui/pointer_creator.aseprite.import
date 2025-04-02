@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dtblfqksowr1e"
+path="res://.godot/imported/pointer_creator.aseprite-e8928dee3d6b25efdfc3b29d63111312.res"
+
+[deps]
+
+source_file="res://ui/pointer_creator.aseprite"
+dest_files=["res://.godot/imported/pointer_creator.aseprite-e8928dee3d6b25efdfc3b29d63111312.res"]
+
+[params]
+

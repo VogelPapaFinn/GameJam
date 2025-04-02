@@ -2,7 +2,11 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
+<<<<<<< HEAD
 uid="uid://d0qlemnbx3qq8"
+=======
+uid="uid://c83djgfgfcv80"
+>>>>>>> origin/main
 path="res://.godot/imported/TileMap_Prototype.aseprite-003b4b7d5afc1a9c28374c1576de7ba4.res"
 
 [deps]

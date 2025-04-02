@@ -1,17 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwiclkrfmwisa"]
+[gd_scene load_steps=6 format=3 uid="uid://cwiclkrfmwisa"]
 
 [ext_resource type="Script" uid="uid://b74hsa3ivg7fs" path="res://scenes/machine/trashcan.gd" id="1_vn88i"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_fu33r"]
+[ext_resource type="Texture2D" uid="uid://bc07xh8lb8whj" path="res://sprites/misc/trashcan.png" id="2_w5q88"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w5q88"]
+size = Vector2(57, 49)
 
-[node name="Trashcan" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu33r"]
+size = Vector2(25, 32)
+
+[node name="Trashcan" type="StaticBody2D"]
+z_index = 2
 script = ExtResource("1_vn88i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w5q88")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="InteractionArea" type="Area2D" parent="."]
 script = ExtResource("2_fu33r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_w5q88")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 6)
+shape = SubResource("RectangleShape2D_fu33r")

@@ -2,7 +2,11 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
+<<<<<<< HEAD
 uid="uid://dl64n87ad16y1"
+=======
+uid="uid://cdin1iaipqs8w"
+>>>>>>> origin/main
 path="res://.godot/imported/shell_silver.aseprite-5277ae6e5bf2534b570ba68eb852f5c1.res"
 
 [deps]
