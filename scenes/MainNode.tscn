@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://booyo7tkt0ak4"]
+[gd_scene load_steps=3 format=3 uid="uid://cnb0yc4k05qaj"]
 
 [ext_resource type="PackedScene" uid="uid://o77vmuxh1tly" path="res://scenes/player.tscn" id="1_pylub"]
-[ext_resource type="PackedScene" uid="uid://t80ofe71ecdb" path="res://scenes/Level.tscn" id="2_qo02p"]
+[ext_resource type="PackedScene" uid="uid://cnwm7qf7roa1k" path="res://scenes/Level.tscn" id="2_qo02p"]
 
 [node name="MainNode" type="Node2D"]
 y_sort_enabled = true
@@ -17,6 +17,6 @@ PLAYER_SPEED = 15000
 [node name="pl2" parent="." instance=ExtResource("1_pylub")]
 position = Vector2(376, 334)
 scale = Vector2(2, 2)
-is_player_2 = true
 motion_mode = 1
+is_player_2 = true
 PLAYER_SPEED = 15000

@@ -3,7 +3,8 @@ extends CharacterBody2D
 @export var is_player_2 : bool = false
 
 @export var PLAYER_SPEED = 20000
-@onready var sprite = $AnimatedPlayerSprite_player2
+@onready var sprite = $AnimatedPlayerSprite_player1
+@onready var sprite2 = $AnimatedPlayerSprite_player2
 
 enum Direction {LEFT, RIGHT, UP, DOWN}
 enum Moving {IDLE, MOVING }
@@ -18,8 +19,10 @@ var last_direction = Direction.DOWN
 func _ready() -> void:
 	if is_player_2:
 		Scenemanager.pl2 = self
+		$AnimatedPlayerSprite_player1.visible = false
 	else:
 		Scenemanager.pl1 = self
+		$AnimatedPlayerSprite_player2.visible = false
 	current_inventory = inventory.new()
 
 func _process(_delta: float) -> void:
@@ -58,24 +61,35 @@ func _physics_process(delta: float) -> void:
 
 # play correct walking/idle animation
 func set_animation(direction):
-	if not current_inventory.get_item():
-		if direction.y > 0.5:
-			current_state = Moving.MOVING
-			last_direction = Direction.DOWN
-			sprite.play("moving_down")
-		elif direction.y < 0:
-			current_state = Moving.MOVING
-			last_direction = Direction.UP
-			sprite.play("moving_up")
-		elif direction.x > 0:
-			current_state = Moving.MOVING
-			last_direction = Direction.RIGHT
-			sprite.play("moving_right")
-		elif direction.x < 0:
-			current_state = Moving.MOVING
-			last_direction = Direction.LEFT
-			sprite.play("moving_left")
-			
+	if not is_player_2:
+		if not current_inventory.get_item():
+			if direction.y > 0.5:
+				current_state = Moving.MOVING
+				last_direction = Direction.DOWN
+				sprite.play("moving_down")
+			elif direction.y < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.UP
+				sprite.play("moving_up")
+			elif direction.x > 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.RIGHT
+				sprite.play("moving_right")
+			elif direction.x < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.LEFT
+				sprite.play("moving_left")
+				
+			else:
+				current_state = Moving.IDLE
+				if last_direction == Direction.DOWN:
+					sprite.play("idle_down")
+				elif last_direction == Direction.UP:
+					sprite.play("idle_up")
+				elif last_direction == Direction.LEFT:
+					sprite.play("idle_left")
+				elif last_direction == Direction.RIGHT:
+					sprite.play("idle_right")
 		else:
 			current_state = Moving.IDLE
 			if last_direction == Direction.DOWN:
@@ -86,43 +100,99 @@ func set_animation(direction):
 				sprite.play("idle_left")
 			elif last_direction == Direction.RIGHT:
 				sprite.play("idle_right")
+			if direction.y > 0.5:
+				current_state = Moving.MOVING
+				last_direction = Direction.DOWN
+				sprite.play("moving_down_holding_item")
+			elif direction.y < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.UP
+				sprite.play("moving_up_holding_item")
+			elif direction.x > 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.RIGHT
+				sprite.play("moving_right_holding_item")
+			elif direction.x < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.LEFT
+				sprite.play("moving_left_holding_item")
+				
+			else:
+				current_state = Moving.IDLE
+				if last_direction == Direction.DOWN:
+					sprite.play("idle_down_holding_item")
+				elif last_direction == Direction.UP:
+					sprite.play("idle_up_holding_item")
+				elif last_direction == Direction.LEFT:
+					sprite.play("idle_left_holding_item")
+				elif last_direction == Direction.RIGHT:
+					sprite.play("idle_right_holding_item")
 	else:
-		current_state = Moving.IDLE
-		if last_direction == Direction.DOWN:
-			sprite.play("idle_down")
-		elif last_direction == Direction.UP:
-			sprite.play("idle_up")
-		elif last_direction == Direction.LEFT:
-			sprite.play("idle_left")
-		elif last_direction == Direction.RIGHT:
-			sprite.play("idle_right")
-		if direction.y > 0.5:
-			current_state = Moving.MOVING
-			last_direction = Direction.DOWN
-			sprite.play("moving_down_holding_item")
-		elif direction.y < 0:
-			current_state = Moving.MOVING
-			last_direction = Direction.UP
-			sprite.play("moving_up_holding_item")
-		elif direction.x > 0:
-			current_state = Moving.MOVING
-			last_direction = Direction.RIGHT
-			sprite.play("moving_right_holding_item")
-		elif direction.x < 0:
-			current_state = Moving.MOVING
-			last_direction = Direction.LEFT
-			sprite.play("moving_left_holding_item")
-			
+		if not current_inventory.get_item():
+			if direction.y > 0.5:
+				current_state = Moving.MOVING
+				last_direction = Direction.DOWN
+				sprite2.play("moving_down")
+			elif direction.y < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.UP
+				sprite2.play("moving_up")
+			elif direction.x > 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.RIGHT
+				sprite2.play("moving_right")
+			elif direction.x < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.LEFT
+				sprite2.play("moving_left")
+				
+			else:
+				current_state = Moving.IDLE
+				if last_direction == Direction.DOWN:
+					sprite2.play("idle_down")
+				elif last_direction == Direction.UP:
+					sprite2.play("idle_up")
+				elif last_direction == Direction.LEFT:
+					sprite2.play("idle_left")
+				elif last_direction == Direction.RIGHT:
+					sprite2.play("idle_right")
 		else:
 			current_state = Moving.IDLE
 			if last_direction == Direction.DOWN:
-				sprite.play("idle_down_holding_item")
+				sprite2.play("idle_down")
 			elif last_direction == Direction.UP:
-				sprite.play("idle_up_holding_item")
+				sprite2.play("idle_up")
 			elif last_direction == Direction.LEFT:
-				sprite.play("idle_left_holding_item")
+				sprite2.play("idle_left")
 			elif last_direction == Direction.RIGHT:
-				sprite.play("idle_right_holding_item")
+				sprite2.play("idle_right")
+			if direction.y > 0.5:
+				current_state = Moving.MOVING
+				last_direction = Direction.DOWN
+				sprite2.play("moving_down_holding_item")
+			elif direction.y < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.UP
+				sprite2.play("moving_up_holding_item")
+			elif direction.x > 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.RIGHT
+				sprite2.play("moving_right_holding_item")
+			elif direction.x < 0:
+				current_state = Moving.MOVING
+				last_direction = Direction.LEFT
+				sprite2.play("moving_left_holding_item")
+				
+			else:
+				current_state = Moving.IDLE
+				if last_direction == Direction.DOWN:
+					sprite2.play("idle_down_holding_item")
+				elif last_direction == Direction.UP:
+					sprite2.play("idle_up_holding_item")
+				elif last_direction == Direction.LEFT:
+					sprite2.play("idle_left_holding_item")
+				elif last_direction == Direction.RIGHT:
+					sprite2.play("idle_right_holding_item")
 
 func _on_sneakers_btn_pressed():
 	PLAYER_SPEED += PLAYER_SPEED * 0.25
