@@ -87,6 +87,15 @@ func set_animation(direction):
 			elif last_direction == Direction.RIGHT:
 				sprite.play("idle_right")
 	else:
+		current_state = Moving.IDLE
+		if last_direction == Direction.DOWN:
+			sprite.play("idle_down")
+		elif last_direction == Direction.UP:
+			sprite.play("idle_up")
+		elif last_direction == Direction.LEFT:
+			sprite.play("idle_left")
+		elif last_direction == Direction.RIGHT:
+			sprite.play("idle_right")
 		if direction.y > 0.5:
 			current_state = Moving.MOVING
 			last_direction = Direction.DOWN
@@ -114,3 +123,7 @@ func set_animation(direction):
 				sprite.play("idle_left_holding_item")
 			elif last_direction == Direction.RIGHT:
 				sprite.play("idle_right_holding_item")
+
+func _on_sneakers_btn_pressed():
+	PLAYER_SPEED += PLAYER_SPEED * 0.25
+	# TODO: add particles

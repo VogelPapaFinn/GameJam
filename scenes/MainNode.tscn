@@ -1,14 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://booyo7tkt0ak4"]
+[gd_scene load_steps=3 format=3 uid="uid://booyo7tkt0ak4"]
 
 [ext_resource type="PackedScene" uid="uid://o77vmuxh1tly" path="res://scenes/player.tscn" id="1_pylub"]
 [ext_resource type="PackedScene" uid="uid://t80ofe71ecdb" path="res://scenes/Level.tscn" id="2_qo02p"]
-[ext_resource type="Script" path="res://scenes/spawn_customers.gd" id="3_qo02p"]
-
-[sub_resource type="Curve2D" id="Curve2D_i2bhx"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1308, 754, 0, 0, 0, 0, 1001, 584, 0, 0, 0, 0, 882, 583, 0, 0, 0, 0, 802, 583, 0, 0, 0, 0, 730, 583, 0, 0, 0, 0, 284, 584, 0, 0, 0, 0, -39, 739)
-}
-point_count = 7
 
 [node name="MainNode" type="Node2D"]
 y_sort_enabled = true
