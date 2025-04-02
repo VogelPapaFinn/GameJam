@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://btjcul5hx6ucb" path="res://ui/sprites/loading_bar_full.png" id="2_tgbeo"]
 
 [node name="Loading_bar" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -21,3 +22,5 @@ texture_under = ExtResource("1_ik3qp")
 texture_progress = ExtResource("2_tgbeo")
 
 [node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

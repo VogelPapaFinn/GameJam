@@ -26,12 +26,12 @@ func use(usable: Usable) -> Usable:
 	current_material = usable.material_name
 	$Timer.wait_time = timer_length
 	$Timer.start()    
+	$Loading_bar.start_loading_bar(timer_length)
 	in_progress = true
 	return null 
 
 
 func _on_timer_timeout() -> void:
-	print("timer timeout")
 	in_progress = false
 	var new_chain = chain.instantiate()
 	add_child(new_chain)
