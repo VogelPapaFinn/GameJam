@@ -64,7 +64,7 @@ func _process(delta):
 
 func start_timer():
 	# Generate order
-	var order = GenerateOrder.generate_order()
+	# var order = GenerateOrder.generate_order()
 	timer.start()
 
 func _on_timer_timeout():
