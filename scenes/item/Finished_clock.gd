@@ -10,3 +10,4 @@ func compare_clocks(order: Finished_clock) -> bool:
     if order.product.pointer.raw_material != product.pointer.raw_material:
         return false
     return true
+

@@ -4,6 +4,8 @@ extends Node
 @export var collision_shape_2d: CollisionShape2D
 @export var speech_bubble: Sprite2D
 
+var follow_path
+
 func change_state(state: CustomerState.CUSTOMERSTATE):
 	match state:
 		CustomerState.CUSTOMERSTATE.WALKING:
@@ -21,3 +23,6 @@ func change_state(state: CustomerState.CUSTOMERSTATE):
 
 func speech_bubble_visible(state: bool):
 		speech_bubble.visible = state
+
+func got_order():
+	follow_path.order_recieved()

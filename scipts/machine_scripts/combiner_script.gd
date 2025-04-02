@@ -103,6 +103,9 @@ func _on_timer_timeout() -> void:
 	
 	new_clock.position = $Finished_position.position
 	finished_product = new_clock
+	current_shell = null
+	current_pointer = null
+	current_chain = null
 	
 
 func _process(delta: float) -> void:

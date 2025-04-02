@@ -39,6 +39,7 @@ func _ready():
 func init(id: int, _character: CharacterBody2D):
 	character = _character
 	character.speech_bubble_visible(false)
+	character.follow_path = self
 	qid = id
 	stop_point = last_point - qid * 64
 	if qid < counter_num:
@@ -101,8 +102,9 @@ func start_timer():
 	timer.start()
 
 func _on_timer_timeout():
+	Scenemanager.star_manager.customer_left_angry()
 	character.change_state(CustomerState.CUSTOMERSTATE.ANGRYWALKING)
-	emit_signal("continue_signal")  # Emit the signal to resume movement
+	emit_signal("continue_si_on_order_received_signalgnal")  # Emit the signal to resume movement
 
 func _on_continue_signal():
 	stopped = false  # Allow movement again
@@ -112,6 +114,8 @@ func _on_continue_signal():
 	var parent = get_parent()
 	parent.on_customer_leave()
 
-func _on_order_received_signal():
+func order_recieved():
+	print("order recieved")
+	Scenemanager.star_manager.customer_left_happy(timer.time_left, wait_time)
 	character.change_state(CustomerState.CUSTOMERSTATE.WALKING)
 	emit_signal("continue_signal")
