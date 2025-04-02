@@ -15,8 +15,6 @@ func interact(usable: Usable) -> Usable:
 	var	order: Clock_product = $".".get_parent().get_parent().get_order()
 	if !order:
 		return usable
-	print("skipping checking")
-	return null
 	if usable.product.band.raw_material	!= order.band.raw_material:
 		print(usable.product.band.raw_material)
 		print(order.band.raw_material)
@@ -28,4 +26,5 @@ func interact(usable: Usable) -> Usable:
 	if usable.product.pointer.raw_material != order.band.raw_material:
 		print("not right pointer")
 		return usable
+	$".".get_parent().get_parent().order_recieved()
 	return null
