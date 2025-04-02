@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var PLAYER_SPEED = 20000
-@onready var sprite = $AnimatedPlayerSprite
+@onready var sprite = $AnimatedPlayerSprite_player2
 
 enum Direction {LEFT, RIGHT, UP, DOWN}
 enum Moving {IDLE, MOVING }

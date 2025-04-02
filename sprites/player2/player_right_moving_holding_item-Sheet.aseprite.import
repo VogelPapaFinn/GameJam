@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://drkyen567fnyh"
+path="res://.godot/imported/player_right_moving_holding_item-Sheet.aseprite-888e66f2ee201b41eb42c1439458f433.res"
+
+[deps]
+
+source_file="res://sprites/player2/player_right_moving_holding_item-Sheet.aseprite"
+dest_files=["res://.godot/imported/player_right_moving_holding_item-Sheet.aseprite-888e66f2ee201b41eb42c1439458f433.res"]
+
+[params]
+
