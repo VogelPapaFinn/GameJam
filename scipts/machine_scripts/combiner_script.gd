@@ -51,6 +51,7 @@ func check_for_full():
 		current_chain = null
 		
 func pick_up() -> Usable:
+	finished_product.position = Vector2(0,0)
 	var	tmp	= finished_product
 	finished_product = null
 	return tmp

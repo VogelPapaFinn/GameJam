@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var is_player_2 : bool = false
+
 @export var PLAYER_SPEED = 20000
 @onready var sprite = $AnimatedPlayerSprite
 
@@ -14,11 +16,14 @@ var current_state = Moving.IDLE
 var last_direction = Direction.DOWN
 
 func _ready() -> void:
-	Scenemanager.player = self
+	if is_player_2:
+		Scenemanager.pl2 = self
+	else:
+		Scenemanager.pl1 = self
 	current_inventory = inventory.new()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Interact"):
+	if Input.is_action_just_pressed("Interact") or (is_player_2 and Input.is_action_just_pressed("pl2interact")):
 		var areas = $PickupArea.get_overlapping_areas()
 		var current_area : Area2D
 		if len(areas) != 0:
@@ -42,7 +47,11 @@ func _process(_delta: float) -> void:
 			child.queue_free()
 
 func _physics_process(delta: float) -> void:
-	var direction = Input.get_vector("Left", "Right", "Up", "Down")
+	var direction
+	if !is_player_2:
+		direction = Input.get_vector("Left", "Right", "Up", "Down")
+	else:
+		direction = Input.get_vector("pl2left", "pl2right", "pl2up", "pl2down")
 	velocity = direction * PLAYER_SPEED *delta
 	set_animation(direction)
 	move_and_slide()

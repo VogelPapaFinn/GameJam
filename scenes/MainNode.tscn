@@ -13,8 +13,8 @@ point_count = 7
 [node name="MainNode" type="Node2D"]
 y_sort_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_pylub")]
-position = Vector2(690, 401)
+[node name="pl1" parent="." instance=ExtResource("1_pylub")]
+position = Vector2(1007, 437)
 scale = Vector2(2, 2)
 motion_mode = 1
 PLAYER_SPEED = 15000
@@ -24,3 +24,9 @@ PLAYER_SPEED = 15000
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_i2bhx")
 script = ExtResource("3_qo02p")
+
+[node name="pl2" parent="." instance=ExtResource("1_pylub")]
+position = Vector2(376, 334)
+scale = Vector2(2, 2)
+is_player_2 = true
+PLAYER_SPEED = 15000
