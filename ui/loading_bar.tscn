@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://chs8kg0ynxhi4"]
 
 [ext_resource type="Texture2D" uid="uid://f2cj0f8hpds0" path="res://ui/sprites/loading_bar_back.png" id="1_ik3qp"]
-[ext_resource type="Script" uid="uid://b1ijb5tkpw35s" path="res://scipts/loading_bar.gd" id="1_tgbeo"]
+[ext_resource type="Script" uid="uid://bgvleysj7wx8m" path="res://scipts/ui_scripts/loading_bar.gd" id="1_tgbeo"]
 [ext_resource type="Texture2D" uid="uid://btjcul5hx6ucb" path="res://ui/sprites/loading_bar_full.png" id="2_tgbeo"]
 
 [node name="Loading_bar" type="Control"]
