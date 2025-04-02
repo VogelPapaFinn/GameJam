@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dvx3fsiwj5sq4"
+path="res://.godot/imported/player_left_moving-Sheet.aseprite-a2e809c3a0f1ec9c6a1f4bc0053dfee9.res"
+
+[deps]
+
+source_file="res://sprites/player/player_left_moving-Sheet.aseprite"
+dest_files=["res://.godot/imported/player_left_moving-Sheet.aseprite-a2e809c3a0f1ec9c6a1f4bc0053dfee9.res"]
+
+[params]
+
