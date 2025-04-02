@@ -36,8 +36,9 @@ func _ready():
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	connect("continue_signal", Callable(self, "_on_continue_signal"))
 
-func init(id: int, _character: CharacterBody2D):
+func init(id: int, _character: CharacterBody2D, _wait_time):
 	character = _character
+	wait_time = _wait_time
 	character.speech_bubble_visible(false)
 	qid = id
 	stop_point = last_point - qid * 64

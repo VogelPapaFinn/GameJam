@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cdvm5sg6onk5f"
+path="res://.godot/imported/conveyor_belt.aseprite-2cc7b906ab8bc101832e375393466e5c.res"
+
+[deps]
+
+source_file="res://sprites/interactables/conveyor_belt.aseprite"
+dest_files=["res://.godot/imported/conveyor_belt.aseprite-2cc7b906ab8bc101832e375393466e5c.res"]
+
+[params]
+
