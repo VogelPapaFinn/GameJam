@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d4mkx2udlhrub"]
 
-[ext_resource type="Script" uid="uid://bseb1tlvn2d0p" path="res://scenes/machine/Copperl_dispenser.gd" id="1_plxs6"]
+[ext_resource type="Script" path="res://scenes/machine/Copperl_dispenser.gd" id="1_plxs6"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_o5vkn"]
 [ext_resource type="Texture2D" uid="uid://bx66ej7pwptg2" path="res://sprites/interactables/copper_crate.png" id="2_qwgw5"]
 
