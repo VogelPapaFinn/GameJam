@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://fvflaq7sw8v5" path="res://scenes/machine/pointer_creator.tscn" id="11_ax7ne"]
 [ext_resource type="PackedScene" uid="uid://cry7grcda8fxw" path="res://scenes/machine/Shell_creator.tscn" id="12_sv41r"]
 [ext_resource type="PackedScene" uid="uid://l1xoe3u2boq4" path="res://scenes/machine/Chain_creator.tscn" id="13_m0xki"]
-[ext_resource type="PackedScene" uid="uid://cdccyo4m7i2tw" path="res://ui/star_bar.tscn" id="14_xe3hh"]
+[ext_resource type="PackedScene" path="res://ui/star_bar.tscn" id="14_xe3hh"]
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true

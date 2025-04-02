@@ -1,15 +1,78 @@
-[gd_scene load_steps=7 format=3 uid="uid://fvflaq7sw8v5"]
+[gd_scene load_steps=16 format=3 uid="uid://fvflaq7sw8v5"]
 
 [ext_resource type="Script" uid="uid://cpkg33td4evke" path="res://scenes/machine/pointer_creator.gd" id="1_g2ine"]
 [ext_resource type="Texture2D" uid="uid://cuusn7an5qj6b" path="res://sprites/interactables/cutting_machine.png" id="2_dkw2c"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="3_uugj4"]
 [ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_dkw2c"]
+[ext_resource type="Texture2D" uid="uid://dybwmu73i6fea" path="res://sprites/interactables/cutting_machine_animated-Sheet.png" id="6_stsae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
 size = Vector2(52, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwoo"]
 size = Vector2(26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uugj4"]
+atlas = ExtResource("2_dkw2c")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wqcb"]
+atlas = ExtResource("6_stsae")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stsae"]
+atlas = ExtResource("6_stsae")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cide"]
+atlas = ExtResource("6_stsae")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32ty0"]
+atlas = ExtResource("6_stsae")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jrfl"]
+atlas = ExtResource("6_stsae")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_and07"]
+atlas = ExtResource("6_stsae")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gieh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uugj4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wqcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stsae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cide")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32ty0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jrfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_and07")
+}],
+"loop": true,
+"name": &"working",
+"speed": 5.0
+}]
 
 [node name="Pointer_creator" type="StaticBody2D"]
 script = ExtResource("1_g2ine")
@@ -39,5 +102,9 @@ offset_left = -16.0
 offset_top = -53.0
 offset_right = -16.0
 offset_bottom = -53.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0gieh")
+animation = &"idle"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
