@@ -1,10 +1,54 @@
-[gd_scene load_steps=5 format=3 uid="uid://o77vmuxh1tly"]
+[gd_scene load_steps=12 format=3 uid="uid://o77vmuxh1tly"]
 
 [ext_resource type="Script" uid="uid://s7g4jn4jp0cn" path="res://scenes/playerscript.gd" id="1_3vyb7"]
-[ext_resource type="Texture2D" uid="uid://dg2kt5gtq5o03" path="res://tmp_player.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://drg761pyw45gp" path="res://sprites/player/player_sprite_cropped.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://b32coqt8wqbee" path="res://sprites/player/player_down_idle-Sheet.png" id="3_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vyb7"]
-size = Vector2(13, 7)
+size = Vector2(14.75, 22.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
+atlas = ExtResource("3_qhqgy")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ur7pv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjrip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smehm")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(13.5, 9.25)
@@ -16,10 +60,16 @@ script = ExtResource("1_3vyb7")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-0.5, 10.5)
+position = Vector2(0.125, 13.625)
 shape = SubResource("RectangleShape2D_3vyb7")
 
+[node name="AnimatedPlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ur7pv")
+animation = &"idle_down"
+frame_progress = 0.00333178
+
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+visible = false
 y_sort_enabled = true
 texture = ExtResource("2_g2els")
 
