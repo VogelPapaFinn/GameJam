@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://l1xoe3u2boq4"]
 
 [ext_resource type="Script" uid="uid://5kpwxtktdl4g" path="res://scenes/machine/Chain_creator.gd" id="1_mqe7t"]
-[ext_resource type="Texture2D" uid="uid://cpa1lctoqfemc" path="res://sprites/tmp/chain_machine.png" id="1_tkah0"]
+[ext_resource type="Texture2D" uid="uid://bfyd7spxmqofg" path="res://sprites/interactables/rolling_machine.png" id="2_f0k10"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="3_5i21c"]
 [ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_f0k10"]
 
@@ -19,7 +19,7 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_k1vos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_tkah0")
+texture = ExtResource("2_f0k10")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
@@ -35,10 +35,11 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_kapbw")
 
 [node name="Loading_bar" parent="." instance=ExtResource("4_f0k10")]
-offset_left = -18.0
-offset_top = -34.0
-offset_right = -18.0
-offset_bottom = -34.0
+visible = true
+offset_left = -16.0
+offset_top = -54.0
+offset_right = -16.0
+offset_bottom = -54.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interact_area_entered"]

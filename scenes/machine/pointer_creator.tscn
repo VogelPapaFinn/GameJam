@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://fvflaq7sw8v5"]
 
 [ext_resource type="Script" uid="uid://cpkg33td4evke" path="res://scenes/machine/pointer_creator.gd" id="1_g2ine"]
-[ext_resource type="Texture2D" uid="uid://4rawc3pcj3r6" path="res://ui/pointer_creator.png" id="2_g2ine"]
+[ext_resource type="Texture2D" uid="uid://cuusn7an5qj6b" path="res://sprites/interactables/cutting_machine.png" id="2_dkw2c"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="3_uugj4"]
 [ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_dkw2c"]
 
@@ -15,7 +15,7 @@ size = Vector2(26, 26)
 script = ExtResource("1_g2ine")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_g2ine")
+texture = ExtResource("2_dkw2c")
 
 [node name="InteractionArea" type="Area2D" parent="."]
 script = ExtResource("3_uugj4")
@@ -35,9 +35,10 @@ one_shot = true
 [node name="Finish_position" type="Node2D" parent="."]
 
 [node name="Loading_bar" parent="." instance=ExtResource("4_dkw2c")]
+visible = true
 offset_left = -16.0
-offset_top = -35.0
+offset_top = -53.0
 offset_right = -16.0
-offset_bottom = -35.0
+offset_bottom = -53.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
