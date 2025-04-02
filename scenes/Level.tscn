@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://daeg7h7pjg7km" path="res://sprites/TimeBarContentPlaceholder.png" id="4_kl8ac"]
 [ext_resource type="FontFile" uid="uid://cntuisd1j68yb" path="res://res/Pixel Primitive.ttf" id="6_dke22"]
 [ext_resource type="PackedScene" uid="uid://d4mkx2udlhrub" path="res://scenes/machine/Copper_dispenser.tscn" id="8_rccsh"]
-[ext_resource type="PackedScene" path="res://scenes/machine/Gold_dispenser.tscn" id="9_ax7ne"]
+[ext_resource type="PackedScene" uid="uid://cc7wpdpqltvff" path="res://scenes/machine/Gold_dispenser.tscn" id="9_ax7ne"]
 [ext_resource type="PackedScene" uid="uid://bygfqsp4s4s1r" path="res://scenes/machine/Silver_dispenser.tscn" id="10_sv41r"]
 [ext_resource type="PackedScene" uid="uid://fvflaq7sw8v5" path="res://scenes/machine/pointer_creator.tscn" id="11_ax7ne"]
 
