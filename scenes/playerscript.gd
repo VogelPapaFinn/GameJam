@@ -37,35 +37,36 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * PLAYER_SPEED *delta
+	print(direction)
 	set_animation(direction)
 	move_and_slide()
 
 # play correct walking/idle animation
 func set_animation(direction):	
-	if direction.x > 0:
+	if direction.y > 0.5:
+		current_state = Moving.MOVING
+		last_direction = Direction.DOWN
+		sprite.play("moving_down")
+	elif direction.y < 0:
+		current_state = Moving.MOVING
+		last_direction = Direction.UP
+		sprite.play("moving_up")
+	elif direction.x > 0:
 		current_state = Moving.MOVING
 		last_direction = Direction.RIGHT
-		sprite.play("run down")
-#	elif direction.x < 0:
-#		current_state = Moving.MOVING
-#		last_direction = Direction.LEFT
-#		sprite.play("run left")
-#	elif direction.y > 0:
-#		current_state = Moving.MOVING
-#		last_direction = Direction.DOWN
-#		sprite.play("run down")
-#	elif direction.y < 0:
-#		current_state = Moving.MOVING
-#		last_direction = Direction.UP
-#		sprite.play("run up")
+		sprite.play("moving_right")
+	elif direction.x < 0:
+		current_state = Moving.MOVING
+		last_direction = Direction.LEFT
+		sprite.play("moving_left")
 		
 	else:
 		current_state = Moving.IDLE
 		if last_direction == Direction.DOWN:
 			sprite.play("idle_down")
-#		elif last_direction == Direction.UP:
-#			sprite.play("idle up")
-#		elif last_direction == Direction.LEFT:
-#			sprite.play("idle left")
-#		elif last_direction == Direction.RIGHT:
-#			sprite.play("idle right")
+		elif last_direction == Direction.UP:
+			sprite.play("idle_up")
+		elif last_direction == Direction.LEFT:
+			sprite.play("idle_left")
+		elif last_direction == Direction.RIGHT:
+			sprite.play("idle_right")
