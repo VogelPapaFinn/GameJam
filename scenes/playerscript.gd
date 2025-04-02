@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
 @export var PLAYER_SPEED = 20000
+@onready var sprite = $AnimatedPlayerSprite
 
 enum Direction {LEFT, RIGHT, UP, DOWN}
 enum Moving {IDLE, MOVING }
 
 var current_inventory: inventory
 const inventory_display_position = Vector2(1202, 165)
+
+# Define initial walking states
+var current_state = Moving.IDLE
+var last_direction = Direction.DOWN
 
 func _ready() -> void:
 	Scenemanager.player = self
@@ -33,4 +38,35 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * PLAYER_SPEED *delta
+	set_animation(direction)
 	move_and_slide()
+
+# play correct walking/idle animation
+func set_animation(direction):	
+	if direction.x > 0:
+		current_state = Moving.MOVING
+		last_direction = Direction.RIGHT
+		sprite.play("run down")
+#	elif direction.x < 0:
+#		current_state = Moving.MOVING
+#		last_direction = Direction.LEFT
+#		sprite.play("run left")
+#	elif direction.y > 0:
+#		current_state = Moving.MOVING
+#		last_direction = Direction.DOWN
+#		sprite.play("run down")
+#	elif direction.y < 0:
+#		current_state = Moving.MOVING
+#		last_direction = Direction.UP
+#		sprite.play("run up")
+		
+	else:
+		current_state = Moving.IDLE
+		if last_direction == Direction.DOWN:
+			sprite.play("idle_down")
+#		elif last_direction == Direction.UP:
+#			sprite.play("idle up")
+#		elif last_direction == Direction.LEFT:
+#			sprite.play("idle left")
+#		elif last_direction == Direction.RIGHT:
+#			sprite.play("idle right")

@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvs4hniswe3od"]
+[gd_scene load_steps=6 format=3 uid="uid://bygfqsp4s4s1r"]
 
 [ext_resource type="Script" uid="uid://tgi1gmyeui6q" path="res://scenes/machine/Silver_dispenser.gd" id="1_sqrnn"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_lg7ph"]
-[ext_resource type="Texture2D" uid="uid://chbwm2k8hrnxs" path="res://sprites/interactables/silver_crate.png" id="2_n7slg"]
+[ext_resource type="Texture2D" uid="uid://bh0h7unccj8vu" path="res://sprites/interactables/silver_crate.png" id="2_n7slg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
 size = Vector2(52, 34)
