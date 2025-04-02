@@ -7,7 +7,7 @@
 y_sort_enabled = true
 
 [node name="pl1" parent="." instance=ExtResource("1_pylub")]
-position = Vector2(1007, 437)
+position = Vector2(441, 364)
 scale = Vector2(2, 2)
 motion_mode = 1
 PLAYER_SPEED = 15000
@@ -15,7 +15,7 @@ PLAYER_SPEED = 15000
 [node name="Level" parent="." instance=ExtResource("2_qo02p")]
 
 [node name="pl2" parent="." instance=ExtResource("1_pylub")]
-position = Vector2(376, 334)
+position = Vector2(1003, 350)
 scale = Vector2(2, 2)
 motion_mode = 1
 is_player_2 = true
