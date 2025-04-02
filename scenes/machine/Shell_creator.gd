@@ -27,6 +27,7 @@ func use(usable: Usable) -> Usable:
 	$Timer.wait_time = timer_length
 	$Timer.start()    
 	in_progress = true
+	$Loading_bar.start_loading_bar(timer_length)
 	return null 
 
 

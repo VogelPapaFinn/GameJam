@@ -29,7 +29,9 @@ func _process(_delta: float) -> void:
 			current_inventory.set_item(new_item)
 	var current_item = current_inventory.get_item()
 	if current_item:
-		$Inventory_Display.global_position = inventory_display_position
+		var above_head_pos = position
+		above_head_pos = Vector2(above_head_pos.x, above_head_pos.y - 50)
+		$Inventory_Display.global_position = above_head_pos 
 		$Inventory_Display.texture = current_item.get_sprite()
 	else:
 		$Inventory_Display.texture = null
@@ -37,7 +39,6 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = direction * PLAYER_SPEED *delta
-	print(direction)
 	set_animation(direction)
 	move_and_slide()
 

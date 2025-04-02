@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://db4gsktyb7g83"
+path="res://.godot/imported/rolling_machine_animated.aseprite-58665dc668d64d743827fa9ed0186785.res"
+
+[deps]
+
+source_file="res://sprites/interactables/rolling_machine_animated.aseprite"
+dest_files=["res://.godot/imported/rolling_machine_animated.aseprite-58665dc668d64d743827fa9ed0186785.res"]
+
+[params]
+
