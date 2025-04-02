@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://5sno6ymqlqkw"
+path="res://.godot/imported/till.aseprite-352aab50947a9ea6bd41dff58ef63bca.res"
+
+[deps]
+
+source_file="res://sprites/misc/till.aseprite"
+dest_files=["res://.godot/imported/till.aseprite-352aab50947a9ea6bd41dff58ef63bca.res"]
+
+[params]
+

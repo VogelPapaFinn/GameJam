@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dc8jiyttlad6h"
+path="res://.godot/imported/player_down_idle-Sheet.aseprite-e54da6dc8d79b89cabd85e4a948bfebe.res"
+
+[deps]
+
+source_file="res://sprites/player/player_down_idle-Sheet.aseprite"
+dest_files=["res://.godot/imported/player_down_idle-Sheet.aseprite-e54da6dc8d79b89cabd85e4a948bfebe.res"]
+
+[params]
+
