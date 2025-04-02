@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb1aljewvxmyh"]
+
+[ext_resource type="Script" uid="uid://dpaqqafygglhp" path="res://scenes/item/Clock_chain.gd" id="1_heu4b"]
+
+[node name="Chain" type="Node2D"]
+script = ExtResource("1_heu4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

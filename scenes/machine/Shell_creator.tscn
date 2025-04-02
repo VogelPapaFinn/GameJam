@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://cry7grcda8fxw"]
+
+[ext_resource type="Texture2D" uid="uid://cumwc5flg3wub" path="res://sprites/interactables/pressing_machine.png" id="1_q7h82"]
+[ext_resource type="Script" uid="uid://deiwuk4rsg20k" path="res://scenes/machine/Shell_creator.gd" id="1_uwq58"]
+[ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="3_k42o5"]
+[ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_urc6s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1vos"]
+size = Vector2(30, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kapbw"]
+size = Vector2(50, 50)
+
+[node name="Shell_creator" type="StaticBody2D"]
+script = ExtResource("1_uwq58")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_k1vos")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_q7h82")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="Finish_position" type="Node2D" parent="."]
+
+[node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource("3_k42o5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_kapbw")
+
+[node name="Loading_bar" parent="." instance=ExtResource("4_urc6s")]
+offset_left = -16.0
+offset_top = -53.0
+offset_right = -16.0
+offset_bottom = -53.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="InteractionArea" to="." method="_on_interact_area_entered"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyyujlbg5vgsu"]
+[gd_scene load_steps=7 format=3 uid="uid://cyyujlbg5vgsu"]
 
 [ext_resource type="Script" uid="uid://cpkg33td4evke" path="res://scenes/machine/pointer_creator.gd" id="1_8u0cy"]
 [ext_resource type="Texture2D" uid="uid://4rawc3pcj3r6" path="res://ui/pointer_creator.png" id="2_5wsg3"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_8u0cy"]
+[ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_k1vos"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1vos"]
 
@@ -28,6 +29,12 @@ script = ExtResource("2_8u0cy")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Interact"]
 shape = SubResource("RectangleShape2D_kapbw")
+
+[node name="Loading_bar" parent="." instance=ExtResource("4_k1vos")]
+offset_left = -16.0
+offset_top = -30.0
+offset_right = -16.0
+offset_bottom = -30.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Interact" to="." method="_on_interact_area_entered"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://chs8kg0ynxhi4"]
+
+[ext_resource type="Texture2D" uid="uid://f2cj0f8hpds0" path="res://ui/sprites/loading_bar_back.png" id="1_ik3qp"]
+[ext_resource type="Texture2D" uid="uid://btjcul5hx6ucb" path="res://ui/sprites/loading_bar_full.png" id="2_tgbeo"]
+
+[node name="Loading_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_under = ExtResource("1_ik3qp")
+texture_progress = ExtResource("2_tgbeo")

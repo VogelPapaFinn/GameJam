@@ -1,21 +1,21 @@
 extends StaticBody2D
 
 var in_progress = false
-var current_material 
-var pointer = preload("res://scenes/pointer.tscn")
+var current_material
+var shell = preload("res://scenes/shell.tscn")
 @export var timer_length = 5
-var active_pointer
+var active_shell
 
 func _ready():
 	$InteractionArea.machine = self
 
 
 func use(usable: Usable) -> Usable:
-	if active_pointer:
+	if active_shell:
 		if !usable:
-			active_pointer.hide()
-			var tmp = active_pointer
-			active_pointer = null
+			active_shell.hide()
+			var tmp = active_shell
+			active_shell = null
 			return tmp 
 		else:
 			return null
@@ -31,14 +31,13 @@ func use(usable: Usable) -> Usable:
 
 
 func _on_timer_timeout() -> void:
-	print("timer timeout")
 	in_progress = false
-	var new_pointer = pointer.instantiate()
-	add_child(new_pointer)
-	new_pointer.raw_material = current_material
-	new_pointer.global_position = $Finish_position.global_position
-	active_pointer = new_pointer
-	new_pointer.set_sprite()
+	var new_shell = shell.instantiate()
+	add_child(new_shell)
+	new_shell.raw_material = current_material
+	new_shell.global_position = $Finish_position.global_position
+	active_shell = new_shell 
+	new_shell.set_sprite()
 
 func _on_interact_area_entered(area:Area2D) -> void:
 	# Display the prompt here
