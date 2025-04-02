@@ -9,4 +9,4 @@ func _on_mouse_exit():
 	sneakers_label.visible = false
 
 func _on_pressed():
-	pass
+	self.disabled = true

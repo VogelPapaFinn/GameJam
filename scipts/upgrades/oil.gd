@@ -9,4 +9,4 @@ func _on_mouse_exit():
 	oil_label.visible = false
 
 func _on_pressed():
-	pass
+	self.disabled = true

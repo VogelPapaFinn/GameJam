@@ -73,4 +73,5 @@ func set_animation(direction):
 			sprite.play("idle_right")
 
 func _on_sneakers_btn_pressed():
-	PLAYER_SPEED += PLAYER_SPEED * 0.5
+	PLAYER_SPEED += PLAYER_SPEED * 0.25
+	# TODO: add particles
