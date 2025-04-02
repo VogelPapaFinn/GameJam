@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2hmo28c0vl6e" path="res://scenes/item/Clock_pointer.gd" id="1_6s21t"]
 
-[node name="Pointer" type="Node2D"]
+[node name="Pointer" type="Node2D" groups=["pointer"]]
 script = ExtResource("1_6s21t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

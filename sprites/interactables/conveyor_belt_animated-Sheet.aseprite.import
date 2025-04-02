@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c2ku4txlknvqw"
+path="res://.godot/imported/conveyor_belt_animated-Sheet.aseprite-aa953ea470b1cb2da756fff6b7f6158a.res"
+
+[deps]
+
+source_file="res://sprites/interactables/conveyor_belt_animated-Sheet.aseprite"
+dest_files=["res://.godot/imported/conveyor_belt_animated-Sheet.aseprite-aa953ea470b1cb2da756fff6b7f6158a.res"]
+
+[params]
+

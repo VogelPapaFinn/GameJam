@@ -32,9 +32,14 @@ func _process(_delta: float) -> void:
 		var above_head_pos = position
 		above_head_pos = Vector2(above_head_pos.x, above_head_pos.y - 50)
 		$Inventory_Display.global_position = above_head_pos 
-		$Inventory_Display.texture = current_item.get_sprite()
+		if current_item is not Finished_clock:
+			$Inventory_Display.texture = current_item.get_sprite()
+		else:
+			$Inventory_Display.add_child(current_item)
 	else:
 		$Inventory_Display.texture = null
+		for child in $Inventory_Display.get_children():
+			child.queue_free()
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("Left", "Right", "Up", "Down")

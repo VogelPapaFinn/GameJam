@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dpaqqafygglhp" path="res://scenes/item/Clock_chain.gd" id="1_heu4b"]
 
-[node name="Chain" type="Node2D"]
+[node name="Chain" type="Node2D" groups=["chain"]]
 script = ExtResource("1_heu4b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

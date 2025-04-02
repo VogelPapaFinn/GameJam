@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://n353h2ktxwac" path="res://scenes/item/Clock_shell.gd" id="1_bo4bk"]
 
-[node name="Shell" type="Node2D"]
+[node name="Shell" type="Node2D" groups=["shell"]]
 script = ExtResource("1_bo4bk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -29,6 +29,12 @@ window/size/viewport_height=720
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 
+[global_group]
+
+pointer=""
+shell=""
+chain=""
+
 [input]
 
 Up={

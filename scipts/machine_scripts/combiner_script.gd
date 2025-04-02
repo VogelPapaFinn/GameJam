@@ -1,45 +1,51 @@
-extends StaticBody2D
+extends	StaticBody2D
 
-var current_shell: Clock_shell
-var current_pointer: Clock_pointer
-var current_chain: Clock_chain
-var finished_product
-var finished_clock  = preload("res://scenes/item/Finished_clock.gd")
+var	current_shell: Clock_shell
+var	current_pointer: Clock_pointer
+var	current_chain: Clock_chain
+var	finished_product
+var	finished_clock	= preload("res://scenes/item/finished_clock.tscn")
 
 func _ready() -> void:
-    $Chain_area.machine = self
-    $Pointer_area.machine = self
-    $Shell_area.machine = self
+	$Chain_area.machine	= self
+	$Pointer_area.machine =	self
+	$Shell_area.machine	= self
+	$Pickup_area.machine = self
 
 func use(item: Usable) -> Usable:
-    match item:
-        Clock_shell:
-            if current_shell:
-                return item
-            current_shell = item
-            check_for_full()
-            return null
-        Clock_pointer:
-            if current_pointer:
-                return item
-            current_pointer = item
-            check_for_full()
-            return null
-        Clock_chain:
-            if current_chain:
-                return item
-            current_chain = item
-            check_for_full()
-            return null
-    return null
+	if item.is_in_group("shell"):
+		if current_shell:
+			return item
+		current_shell =	item
+		check_for_full()
+		return null
+	elif item.is_in_group("pointer"):
+		if current_pointer:
+			return item
+		current_pointer	= item
+		check_for_full()
+		return null
+	elif item.is_in_group("chain"):
+		if current_chain:
+			return item
+		current_chain =	item
+		check_for_full()
+		return null
+	else:
+		print("match fialed")
+		print(item.get_groups())
+		return item
 
 func check_for_full():
-    if current_chain and current_pointer and current_shell:
-        var new_clock = finished_clock.instatiate()
-        new_clock.position = $Finished_position.position
-        finished_product = new_clock
-
+	if current_chain and current_pointer and current_shell:
+		var	new_clock =	finished_clock.instantiate()
+		new_clock.get_node("shell").texture = current_shell.get_sprite()
+		new_clock.get_node("chain").texture = current_chain.get_finished_sprite()
+		new_clock.get_node("pointer").texture = current_pointer.get_finished_sprite()
+		new_clock.position = $Finished_position.position
+		finished_product = new_clock
+		
 func pick_up() -> Usable:
-    var tmp = finished_product
-    finished_product = null
-    return tmp
+	var	tmp	= finished_product
+	finished_product = null
+	return tmp
