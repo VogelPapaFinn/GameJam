@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bx66ej7pwptg2" path="res://sprites/interactables/copper_crate.png" id="2_qwgw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
-size = Vector2(36, 32)
+size = Vector2(48, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwoo"]
 size = Vector2(25, 26)
@@ -20,7 +20,6 @@ texture = ExtResource("2_qwgw5")
 script = ExtResource("2_o5vkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-3, 0)
 shape = SubResource("RectangleShape2D_xjn0a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

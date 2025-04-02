@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bh0h7unccj8vu" path="res://sprites/interactables/silver_crate.png" id="2_n7slg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
-size = Vector2(52, 34)
+size = Vector2(57, 52)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwoo"]
 size = Vector2(26, 26)
@@ -20,7 +20,7 @@ texture = ExtResource("2_n7slg")
 script = ExtResource("2_lg7ph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-3, 0)
+position = Vector2(-3.5, 1)
 shape = SubResource("RectangleShape2D_xjn0a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
