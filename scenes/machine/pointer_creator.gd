@@ -47,3 +47,6 @@ func _on_timer_timeout() -> void:
 func _on_interact_area_entered(area:Area2D) -> void:
 	# Display the prompt here
 	pass # Replace with function body.
+
+func _on_oil_btn_pressed():
+	timer_length *= 0.75

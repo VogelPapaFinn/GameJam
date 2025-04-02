@@ -25,4 +25,8 @@ func speech_bubble_visible(state: bool):
 		speech_bubble.visible = state
 
 func got_order():
+<<<<<<< HEAD
 	follow_path.order_recieved()
+=======
+	follow_path.order_recieved()
+>>>>>>> upgrades
