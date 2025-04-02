@@ -4,6 +4,9 @@ const default_angry_deduction = 1
 const default_happy_deduction = 1
 const default_wrong_deduction = 1.5
 
+func _ready() -> void:
+    Scenemanager.star_manager = self
+
 func customer_left_angry():
     var random_deduction = randf_range(-0.5, 0.5)
     var change = default_angry_deduction + random_deduction

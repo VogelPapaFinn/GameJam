@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=4 uid="uid://bigv81srxxc1r"]
+[gd_scene load_steps=30 format=4 uid="uid://bigv81srxxc1r"]
 
 [ext_resource type="Script" uid="uid://csmycorv3nhve" path="res://scenes/customer/customer_script.gd" id="1_8noaa"]
+[ext_resource type="Script" uid="uid://b0y7k30gfuj5g" path="res://scenes/customer/customer_interact.gd" id="2_duem0"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_8noaa"]
 _data = PackedByteArray("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")
@@ -298,7 +299,7 @@ size = Vector2(30, 90)
 collision_layer = 2
 script = ExtResource("1_8noaa")
 animated_sprite_2d = NodePath("AnimatedSprite2D")
-collision_shape_2d = NodePath("CollisionShape2D")
+collision_shape_2d = NodePath("Area2D/CollisionShape2D")
 speech_bubble = NodePath("Sprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -347,6 +348,9 @@ metadata/_aseprite_wizard_config_ = {
 }
 metadata/_aseprite_wizard_source_file_hash_ = "9d5ce330e2fe1381885ade67b4b87fdc"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -46)
+script = ExtResource("2_duem0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_8noaa")

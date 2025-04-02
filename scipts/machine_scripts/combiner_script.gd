@@ -42,8 +42,13 @@ func check_for_full():
 		new_clock.get_node("shell").texture = current_shell.get_sprite()
 		new_clock.get_node("chain").texture = current_chain.get_finished_sprite()
 		new_clock.get_node("pointer").texture = current_pointer.get_finished_sprite()
-		new_clock.position = $Finished_position.position
+		new_clock.position = $Finished_position.global_position
+		new_clock.add_to_group("finished")
+		new_clock.product = Clock_product.new(current_chain, current_shell, current_pointer)
 		finished_product = new_clock
+		current_shell = null
+		current_pointer = null
+		current_chain = null
 		
 func pick_up() -> Usable:
 	var	tmp	= finished_product

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dybwmu73i6fea" path="res://sprites/interactables/cutting_machine_animated-Sheet.png" id="6_stsae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjn0a"]
-size = Vector2(52, 34)
+size = Vector2(52, 79)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnwoo"]
 size = Vector2(26, 26)
@@ -84,7 +84,7 @@ texture = ExtResource("2_dkw2c")
 script = ExtResource("3_uugj4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-3, 0)
+position = Vector2(-3, 1.5)
 shape = SubResource("RectangleShape2D_xjn0a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

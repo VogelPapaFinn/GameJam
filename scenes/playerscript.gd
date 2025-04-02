@@ -21,7 +21,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Interact"):
 		var areas = $PickupArea.get_overlapping_areas()
 		var current_area : Area2D
-		if len(areas) == 1 :
+		if len(areas) != 0:
 			current_area= areas[0]
 		if current_area and current_area.is_in_group("interact"):
 			var cur_item = current_inventory.get_item()

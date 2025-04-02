@@ -5,8 +5,8 @@
 [ext_resource type="Script" uid="uid://bkk6hdxlip85e" path="res://scipts/machine_scripts/acceptor_scripts/chain_acceptor.gd" id="3_umbwf"]
 [ext_resource type="Script" uid="uid://cil44rtaoxmqp" path="res://scipts/machine_scripts/acceptor_scripts/pointer_acceptor.gd" id="4_ghmsf"]
 [ext_resource type="Script" uid="uid://cjxlkqh1u77lt" path="res://scipts/machine_scripts/acceptor_scripts/null_acceptor.gd" id="5_ghmsf"]
-[ext_resource type="Texture2D" uid="uid://d4k7oxbl6hr1i" path="res://sprites/interactables/conveyor_belt.png" id="5_umbwf"]
-[ext_resource type="Texture2D" uid="uid://cpd58wx613jp2" path="res://sprites/interactables/assembler_conveyor.png" id="6_ghmsf"]
+[ext_resource type="Texture2D" uid="uid://bv2j2iinmpjxq" path="res://sprites/interactables/conveyor_belt.png" id="5_umbwf"]
+[ext_resource type="Texture2D" uid="uid://foxqrrrid4e8" path="res://sprites/interactables/assembler_conveyor.png" id="6_ghmsf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7a5e"]
 size = Vector2(32, 124)
