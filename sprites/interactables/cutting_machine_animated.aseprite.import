@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://clvp3cdyxj0e5"
+path="res://.godot/imported/cutting_machine_animated.aseprite-e801ebfe7e8434901d137ad85aca8167.res"
+
+[deps]
+
+source_file="res://sprites/interactables/cutting_machine_animated.aseprite"
+dest_files=["res://.godot/imported/cutting_machine_animated.aseprite-e801ebfe7e8434901d137ad85aca8167.res"]
+
+[params]
+
