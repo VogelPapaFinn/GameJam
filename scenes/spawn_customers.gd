@@ -2,7 +2,7 @@ extends Path2D
 
 var generated_children = []
 @export var character_scene: PackedScene = preload("res://scenes/customer/customer.tscn")
-@export var character_count: int = 3  # Number of characters to spawn
+@export var character_max_count: int = 3  # Number of characters to spawn
 var queue_count: int = 0
 
 func _ready():
@@ -14,9 +14,7 @@ func _ready():
 	timer.start()
 
 func _on_timer_timeout():
-	if queue_count < 3:
-		spawn_character(queue_count)
-		queue_count += 1
+	spawn_character(queue_count)
 
 func on_customer_leave():
 	if queue_count > 0:
@@ -26,6 +24,9 @@ func on_customer_leave():
 				child.update_queue()
 
 func spawn_character(id: int = 0):
+	if queue_count >= character_max_count:
+		return
+	queue_count += 1
 	# Create a PathFollow2D instance for the character
 	var path_follow = PathFollow2D.new()
 	path_follow.set_script(load("res://scenes/customer/customerPathFollow.gd"))
@@ -39,6 +40,5 @@ func spawn_character(id: int = 0):
 	path_follow.init(id, character)
 	add_child(path_follow)
 	generated_children.append(path_follow)
-
 	# Start movement for the character
 	path_follow.start_moving()

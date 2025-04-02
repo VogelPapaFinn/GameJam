@@ -3,14 +3,16 @@ extends PathFollow2D
 signal continue_signal
 
 var character: CharacterBody2D
+var timer: Timer
 @export var speed = 100  # Movement speed
 @export var counter_num = 2
 var stopped = false
 var leave = false
+var ordered = false
 const last_point = 614
 var order_point = 614
 var stop_point = 614  # The position where the character stops
-var wait_time = 3.0  # Time to wait before continuing
+var wait_time = 30.0  # Time to wait before continuing
 var qid = 0
 
 func init(id: int, _character: CharacterBody2D):
@@ -28,6 +30,11 @@ func update_queue():
 	stopped = false
 
 func _ready():
+	timer = Timer.new()
+	timer.wait_time = wait_time
+	timer.one_shot = true
+	add_child(timer)
+	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	connect("continue_signal", Callable(self, "_on_continue_signal"))
 
 func start_moving():
@@ -35,23 +42,29 @@ func start_moving():
 
 func _process(delta):
 	if not stopped:
-		progress += speed * delta  # Continue moving along the path
+		progress += speed * delta
 		if progress >= order_point and not leave:
 			stopped = true
-			start_timer()
+			if not ordered:
+				start_timer()
+				ordered = true
 			character.change_state(CustomerState.CUSTOMERSTATE.OREDERING)
 		elif progress > stop_point and not leave:
 			stopped = true
 			character.change_state(CustomerState.CUSTOMERSTATE.WAITING)
+	else:
+		var time_left = timer.time_left
+		if time_left > 0:
+			if time_left <= wait_time * 0.25:
+				character.change_state(CustomerState.CUSTOMERSTATE.ANGRY)
+			elif time_left <= wait_time * 0.5:
+				character.change_state(CustomerState.CUSTOMERSTATE.IMPATIENT)
+			elif time_left <= wait_time - 2.0:
+				character.change_state(CustomerState.CUSTOMERSTATE.WAITING)
 
 func start_timer():
 	# Generate order
 	var order = GenerateOrder.generate_order()
-	var timer = Timer.new()
-	timer.wait_time = wait_time
-	timer.one_shot = true  # Run only once
-	add_child(timer)
-	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 	timer.start()
 
 func _on_timer_timeout():
