@@ -6,6 +6,17 @@ var copper_sprite = preload("res://sprites/items/copper_clock_hands.png")
 var gold_sprite = preload("res://sprites/items/gold_clock_hands.png")
 var silver_sprite = preload("res://sprites/items/silver_clock_hands.png")
 
+<<<<<<< HEAD
+func get_sprite() -> Sprite2D:
+	match raw_material:
+		Raw_material.RAW_MATERIAL.METAL: 
+			return 
+		Raw_material.RAW_MATERIAL.GOLD: 
+			return 
+		Raw_material.RAW_MATERIAL.SILVER: 
+			return 
+	return 
+=======
 func get_sprite() -> Resource:
 	match raw_material:
 		Raw_material.RAW_MATERIAL.COPPER: 
@@ -18,6 +29,10 @@ func get_sprite() -> Resource:
 
 func set_sprite():
 	$Sprite2D.texture = get_sprite()
+<<<<<<< HEAD
+>>>>>>> origin/main
+=======
 
 func hide():
 	$Sprite2D.texture = null
+>>>>>>> origin/main
