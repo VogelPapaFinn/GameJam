@@ -1,15 +1,50 @@
-[gd_scene load_steps=7 format=3 uid="uid://l1xoe3u2boq4"]
+[gd_scene load_steps=12 format=3 uid="uid://l1xoe3u2boq4"]
 
 [ext_resource type="Script" uid="uid://5kpwxtktdl4g" path="res://scenes/machine/Chain_creator.gd" id="1_mqe7t"]
 [ext_resource type="Texture2D" uid="uid://bfyd7spxmqofg" path="res://sprites/interactables/rolling_machine.png" id="2_f0k10"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="3_5i21c"]
 [ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_f0k10"]
+[ext_resource type="Texture2D" uid="uid://c3oujo2eekff" path="res://sprites/interactables/rolling_machine_animated-Sheet.png" id="5_5i21c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1vos"]
 size = Vector2(30, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kapbw"]
 size = Vector2(50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4im3"]
+atlas = ExtResource("2_f0k10")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7t0l"]
+atlas = ExtResource("5_5i21c")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1482y"]
+atlas = ExtResource("5_5i21c")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lsp8t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4im3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7t0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1482y")
+}],
+"loop": true,
+"name": &"working",
+"speed": 7.0
+}]
 
 [node name="Chain_creator" type="StaticBody2D"]
 script = ExtResource("1_mqe7t")
@@ -39,6 +74,11 @@ offset_left = -16.0
 offset_top = -54.0
 offset_right = -16.0
 offset_bottom = -54.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lsp8t")
+animation = &"working"
+frame_progress = 0.961508
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interact_area_entered"]

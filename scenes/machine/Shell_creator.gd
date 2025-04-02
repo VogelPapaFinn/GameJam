@@ -23,6 +23,8 @@ func use(usable: Usable) -> Usable:
 	if usable is not Raw_material:
 		return usable 
 
+	$AnimatedSprite2D.play("working")
+	
 	current_material = usable.material_name
 	$Timer.wait_time = timer_length
 	$Timer.start()    
@@ -33,6 +35,7 @@ func use(usable: Usable) -> Usable:
 
 func _on_timer_timeout() -> void:
 	in_progress = false
+	$AnimatedSprite2D.play("idle")
 	var new_shell = shell.instantiate()
 	add_child(new_shell)
 	new_shell.raw_material = current_material

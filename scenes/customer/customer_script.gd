@@ -2,6 +2,7 @@ extends Node
 
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var collision_shape_2d: CollisionShape2D
+@export var speech_bubble: Sprite2D
 
 func change_state(state: CustomerState.CUSTOMERSTATE):
 	match state:
@@ -17,3 +18,6 @@ func change_state(state: CustomerState.CUSTOMERSTATE):
 			animated_sprite_2d.play("Waiting_angry")
 		CustomerState.CUSTOMERSTATE.ANGRYWALKING:
 			animated_sprite_2d.play("Walking_angry")
+
+func speech_bubble_visible(state: bool):
+		speech_bubble.visible = state

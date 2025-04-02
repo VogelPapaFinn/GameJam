@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvidk2snymxcx"
-path="res://.godot/imported/conveyor_belt_animated-Sheet.png-4988026143cd0f9ba71900217e73d953.ctex"
+uid="uid://b43f0qdgscby"
+path="res://.godot/imported/player_left_moving_holding_item-Sheet.png-352f4e500762f1d53b8c0179399ca377.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/interactables/conveyor_belt_animated-Sheet.png"
-dest_files=["res://.godot/imported/conveyor_belt_animated-Sheet.png-4988026143cd0f9ba71900217e73d953.ctex"]
+source_file="res://sprites/player/player_left_moving_holding_item-Sheet.png"
+dest_files=["res://.godot/imported/player_left_moving_holding_item-Sheet.png-352f4e500762f1d53b8c0179399ca377.ctex"]
 
 [params]
 

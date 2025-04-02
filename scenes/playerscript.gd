@@ -48,31 +48,60 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 # play correct walking/idle animation
-func set_animation(direction):	
-	if direction.y > 0.5:
-		current_state = Moving.MOVING
-		last_direction = Direction.DOWN
-		sprite.play("moving_down")
-	elif direction.y < 0:
-		current_state = Moving.MOVING
-		last_direction = Direction.UP
-		sprite.play("moving_up")
-	elif direction.x > 0:
-		current_state = Moving.MOVING
-		last_direction = Direction.RIGHT
-		sprite.play("moving_right")
-	elif direction.x < 0:
-		current_state = Moving.MOVING
-		last_direction = Direction.LEFT
-		sprite.play("moving_left")
-		
+func set_animation(direction):
+	if not current_inventory.get_item():
+		if direction.y > 0.5:
+			current_state = Moving.MOVING
+			last_direction = Direction.DOWN
+			sprite.play("moving_down")
+		elif direction.y < 0:
+			current_state = Moving.MOVING
+			last_direction = Direction.UP
+			sprite.play("moving_up")
+		elif direction.x > 0:
+			current_state = Moving.MOVING
+			last_direction = Direction.RIGHT
+			sprite.play("moving_right")
+		elif direction.x < 0:
+			current_state = Moving.MOVING
+			last_direction = Direction.LEFT
+			sprite.play("moving_left")
+			
+		else:
+			current_state = Moving.IDLE
+			if last_direction == Direction.DOWN:
+				sprite.play("idle_down")
+			elif last_direction == Direction.UP:
+				sprite.play("idle_up")
+			elif last_direction == Direction.LEFT:
+				sprite.play("idle_left")
+			elif last_direction == Direction.RIGHT:
+				sprite.play("idle_right")
 	else:
-		current_state = Moving.IDLE
-		if last_direction == Direction.DOWN:
-			sprite.play("idle_down")
-		elif last_direction == Direction.UP:
-			sprite.play("idle_up")
-		elif last_direction == Direction.LEFT:
-			sprite.play("idle_left")
-		elif last_direction == Direction.RIGHT:
-			sprite.play("idle_right")
+		if direction.y > 0.5:
+			current_state = Moving.MOVING
+			last_direction = Direction.DOWN
+			sprite.play("moving_down_holding_item")
+		elif direction.y < 0:
+			current_state = Moving.MOVING
+			last_direction = Direction.UP
+			sprite.play("moving_up_holding_item")
+		elif direction.x > 0:
+			current_state = Moving.MOVING
+			last_direction = Direction.RIGHT
+			sprite.play("moving_right_holding_item")
+		elif direction.x < 0:
+			current_state = Moving.MOVING
+			last_direction = Direction.LEFT
+			sprite.play("moving_left_holding_item")
+			
+		else:
+			current_state = Moving.IDLE
+			if last_direction == Direction.DOWN:
+				sprite.play("idle_down_holding_item")
+			elif last_direction == Direction.UP:
+				sprite.play("idle_up_holding_item")
+			elif last_direction == Direction.LEFT:
+				sprite.play("idle_left_holding_item")
+			elif last_direction == Direction.RIGHT:
+				sprite.play("idle_right_holding_item")
