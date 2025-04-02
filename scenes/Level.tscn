@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=4 uid="uid://cnwm7qf7roa1k"]
+[gd_scene load_steps=26 format=4 uid="uid://cnwm7qf7roa1k"]
 
 [ext_resource type="PackedScene" uid="uid://cwiclkrfmwisa" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
-[ext_resource type="Script" uid="uid://ekxr8m0oexg3" path="res://scipts/level.gd" id="1_iw3v5"]
+[ext_resource type="Script" path="res://scipts/level.gd" id="1_iw3v5"]
 [ext_resource type="TileSet" uid="uid://da3m3hp55ku0o" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
 [ext_resource type="Texture2D" uid="uid://bpa2gx1opfjgi" path="res://sprites/ItemBorder.png" id="1_uhqny"]
 [ext_resource type="Texture2D" uid="uid://b1oeb7f4dhti" path="res://sprites/TestItem.png" id="2_k5jlv"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://l1xoe3u2boq4" path="res://scenes/machine/Chain_creator.tscn" id="13_m0xki"]
 [ext_resource type="PackedScene" uid="uid://cdccyo4m7i2tw" path="res://ui/star_bar.tscn" id="14_xe3hh"]
 [ext_resource type="Script" uid="uid://cis3vp7dp64ga" path="res://scenes/spawn_customers.gd" id="15_p6oy6"]
+[ext_resource type="PackedScene" uid="uid://beh72fldmdwss" path="res://scenes/machine/combiner.tscn" id="21_40jy2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyj84"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0.54902)
@@ -236,6 +237,10 @@ offset_bottom = 23.0
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_opqd1")
 script = ExtResource("15_p6oy6")
+
+[node name="Combiner" parent="." instance=ExtResource("21_40jy2")]
+position = Vector2(751, 362)
+scale = Vector2(2, 2)
 
 [connection signal="mouse_entered" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_enter"]
 [connection signal="mouse_exited" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_exit"]

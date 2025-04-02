@@ -14,12 +14,9 @@ PLAYER_SPEED = 15000
 
 [node name="Level" parent="." instance=ExtResource("2_qo02p")]
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_i2bhx")
-script = ExtResource("3_qo02p")
-
 [node name="pl2" parent="." instance=ExtResource("1_pylub")]
 position = Vector2(376, 334)
 scale = Vector2(2, 2)
 is_player_2 = true
+motion_mode = 1
 PLAYER_SPEED = 15000
