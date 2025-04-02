@@ -24,10 +24,9 @@ func _process(_delta: float) -> void:
 		if len(areas) == 1 :
 			current_area= areas[0]
 		if current_area and current_area.is_in_group("interact"):
-			if current_inventory.get_count() != 0 or current_area.is_in_group("trash"):
-				var current_item = current_inventory.get_item()
-				var new_item = current_area.interact(current_item)
-				current_inventory.set_item(new_item)
+			var cur_item = current_inventory.get_item()
+			var new_item = current_area.interact(cur_item)
+			current_inventory.set_item(new_item)
 	var current_item = current_inventory.get_item()
 	if current_item:
 		$Inventory_Display.global_position = inventory_display_position

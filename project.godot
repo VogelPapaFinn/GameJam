@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="ClockWork"
-run/main_scene="uid://cnb0yc4k05qaj"
+run/main_scene="uid://booyo7tkt0ak4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Scenemanager="*res://global/scenemanager.gd"
+GenerateOrder="*res://generate_order.gd"
 
 [display]
 
@@ -63,3 +64,4 @@ Interact={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
