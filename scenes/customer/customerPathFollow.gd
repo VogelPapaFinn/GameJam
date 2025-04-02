@@ -2,21 +2,29 @@ extends PathFollow2D
 
 signal continue_signal
 
+var character: CharacterBody2D
 @export var speed = 100  # Movement speed
+@export var counter_num = 2
 var stopped = false
 var leave = false
+const last_point = 614
 var order_point = 614
 var stop_point = 614  # The position where the character stops
 var wait_time = 3.0  # Time to wait before continuing
 var qid = 0
 
-func init(id: int):
+func init(id: int, _character: CharacterBody2D):
+	character = _character
 	qid = id
-	stop_point = order_point - qid * 64
+	stop_point = last_point - qid * 64
+	if qid < counter_num:
+		order_point = stop_point
 	
 func update_queue():
 	qid -= 1
-	stop_point = order_point - qid * 64
+	stop_point = last_point - qid * 64
+	if qid < counter_num:
+		order_point = stop_point
 	stopped = false
 
 func _ready():
@@ -31,10 +39,10 @@ func _process(delta):
 		if progress >= order_point and not leave:
 			stopped = true
 			start_timer()
-			# TODO: Order animation into waiting animation into impatient animation
-		if progress >= stop_point and not leave:
+			character.change_state(CustomerState.CUSTOMERSTATE.OREDERING)
+		elif progress > stop_point and not leave:
 			stopped = true
-			# TODO: Waiting animation
+			character.change_state(CustomerState.CUSTOMERSTATE.WAITING)
 
 func start_timer():
 	# Generate order
@@ -47,6 +55,7 @@ func start_timer():
 	timer.start()
 
 func _on_timer_timeout():
+	character.change_state(CustomerState.CUSTOMERSTATE.ANGRYWALKING)
 	emit_signal("continue_signal")  # Emit the signal to resume movement
 
 func _on_continue_signal():
@@ -56,4 +65,5 @@ func _on_continue_signal():
 	parent.on_customer_leave()
 
 func _on_order_received_signal():
+	character.change_state(CustomerState.CUSTOMERSTATE.WALKING)
 	emit_signal("continue_signal")

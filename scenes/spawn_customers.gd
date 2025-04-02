@@ -29,7 +29,6 @@ func spawn_character(id: int = 0):
 	# Create a PathFollow2D instance for the character
 	var path_follow = PathFollow2D.new()
 	path_follow.set_script(load("res://scenes/customer/customerPathFollow.gd"))
-	path_follow.init(id)
 	path_follow.progress = 0.0
 	path_follow.rotates = false
 	path_follow.loop = false
@@ -37,6 +36,7 @@ func spawn_character(id: int = 0):
 	var character = character_scene.instantiate()
 	character.set_z_index(2)
 	path_follow.add_child(character)  # Add character to PathFollow2D
+	path_follow.init(id, character)
 	add_child(path_follow)
 	generated_children.append(path_follow)
 
