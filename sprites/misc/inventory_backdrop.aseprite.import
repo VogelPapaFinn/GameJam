@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cqpd7o72sewr8"
+path="res://.godot/imported/inventory_backdrop.aseprite-2a5f89b9beefc13dd1f546d4b4db7a5c.res"
+
+[deps]
+
+source_file="res://sprites/misc/inventory_backdrop.aseprite"
+dest_files=["res://.godot/imported/inventory_backdrop.aseprite-2a5f89b9beefc13dd1f546d4b4db7a5c.res"]
+
+[params]
+
