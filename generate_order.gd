@@ -12,7 +12,5 @@ func generate_order() -> Clock_product:
 	var new_band = Clock_chain.new()
 	var bmaterial = randi_range(1, MAX_MATERIAL)
 	new_band.raw_material = bmaterial
-	var product = Clock_product.new()
-	
-	#product.components = [new_pointer, new_shell, new_band]
+	var product = Clock_product.new(new_band, new_shell, new_pointer)
 	return product
