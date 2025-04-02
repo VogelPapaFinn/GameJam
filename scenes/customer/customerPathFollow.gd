@@ -1,12 +1,23 @@
 extends PathFollow2D
 
-signal continue_signal  # Define a signal for resuming movement
+signal continue_signal
 
 @export var speed = 100  # Movement speed
 var stopped = false
 var leave = false
-var stop_point = 618  # The position where the character stops
+var order_point = 614
+var stop_point = 614  # The position where the character stops
 var wait_time = 3.0  # Time to wait before continuing
+var qid = 0
+
+func init(id: int):
+	qid = id
+	stop_point = order_point - qid * 64
+	
+func update_queue():
+	qid -= 1
+	stop_point = order_point - qid * 64
+	stopped = false
 
 func _ready():
 	connect("continue_signal", Callable(self, "_on_continue_signal"))
@@ -15,17 +26,15 @@ func start_moving():
 	set_process(true)  # Enable movement
 
 func _process(delta):
-	#if path_follow and not stopped:
-		#path_follow.progress += speed * delta # Move along the path
-		## Stop at a certain point on the path
-	#if path_follow.progress >= stop_point and not stopped:
-		#stopped = true
-		#start_timer()
 	if not stopped:
 		progress += speed * delta  # Continue moving along the path
+		if progress >= order_point and not leave:
+			stopped = true
+			start_timer()
+			# TODO: Order animation into waiting animation into impatient animation
 		if progress >= stop_point and not leave:
 			stopped = true
-			start_timer()  # Start the timer when reaching the stop point
+			# TODO: Waiting animation
 
 func start_timer():
 	# Generate order
@@ -43,6 +52,8 @@ func _on_timer_timeout():
 func _on_continue_signal():
 	stopped = false  # Allow movement again
 	leave = true
+	var parent = get_parent()
+	parent.on_customer_leave()
 
 func _on_order_received_signal():
 	emit_signal("continue_signal")
