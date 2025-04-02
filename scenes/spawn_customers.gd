@@ -4,9 +4,11 @@ var generated_children = []
 @export var character_scene: PackedScene = preload("res://scenes/customer/customer.tscn")
 @export var character_max_count: int = 3  # Number of characters to spawn
 var queue_count: int = 0
+var wait_time: float = 30.0
+var timer: Timer
 
 func _ready():
-	var timer = Timer.new()
+	timer = Timer.new()
 	timer.wait_time = 1.0
 	timer.one_shot = false
 	add_child(timer)
@@ -37,8 +39,11 @@ func spawn_character(id: int = 0):
 	var character = character_scene.instantiate()
 	character.set_z_index(2)
 	path_follow.add_child(character)  # Add character to PathFollow2D
-	path_follow.init(id, character)
+	path_follow.init(id, character, wait_time)
 	add_child(path_follow)
 	generated_children.append(path_follow)
 	# Start movement for the character
 	path_follow.start_moving()
+
+func _on_tv_btn_pressed():
+	wait_time = 45.0

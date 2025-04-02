@@ -1,4 +1,6 @@
 extends Node
 
-var player
 var star_manager
+
+var pl1
+var pl2
