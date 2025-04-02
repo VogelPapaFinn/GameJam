@@ -2,7 +2,11 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
+<<<<<<< HEAD
+uid="uid://d1d60h0lnavli"
+=======
 uid="uid://dgpohyv02f3ml"
+>>>>>>> origin/main
 path="res://.godot/imported/silver_lump.aseprite-401959522500e35c55ad23dc22d401fb.res"
 
 [deps]

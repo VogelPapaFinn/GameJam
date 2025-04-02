@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
+uid="uid://vdkigvbrjhqt"
+=======
 uid="uid://c05tknagqjdhx"
+>>>>>>> origin/main
 path="res://.godot/imported/gold_chain.png-5e534f332d6d5b02df36c299f2db7059.ctex"
 metadata={
 "vram_texture": false

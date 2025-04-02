@@ -2,7 +2,11 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
+<<<<<<< HEAD
+uid="uid://bx3shxq1wfcg1"
+=======
 uid="uid://8kf4wnm1kewr"
+>>>>>>> origin/main
 path="res://.godot/imported/gold_clock_hands_on_shell.aseprite-7deb5be17e3a9ad3443c67cf00ab8881.res"
 
 [deps]
