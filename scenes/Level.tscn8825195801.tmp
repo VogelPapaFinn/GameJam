@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cnwm7qf7roa1k"]
+[gd_scene load_steps=27 format=4 uid="uid://cnwm7qf7roa1k"]
 
 [ext_resource type="PackedScene" uid="uid://cwiclkrfmwisa" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
 [ext_resource type="Script" uid="uid://ekxr8m0oexg3" path="res://scipts/level.gd" id="1_iw3v5"]
@@ -36,6 +36,10 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1308, 754, 0, 0, 0, 0, 1001, 584, 0, 0, 0, 0, 882, 583, 0, 0, 0, 0, 802, 583, 0, 0, 0, 0, 730, 583, 0, 0, 0, 0, 284, 584, 0, 0, 0, 0, -39, 739)
 }
 point_count = 7
+
+[sub_resource type="GDScript" id="GDScript_40jy2"]
+script/source = "extends Node2D
+"
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
@@ -241,6 +245,7 @@ script = ExtResource("15_p6oy6")
 [node name="MoneyDisplay" parent="." instance=ExtResource("21_40jy2")]
 position = Vector2(1051, 22)
 scale = Vector2(4, 4)
+script = SubResource("GDScript_40jy2")
 
 [connection signal="mouse_entered" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_enter"]
 [connection signal="mouse_exited" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_exit"]
