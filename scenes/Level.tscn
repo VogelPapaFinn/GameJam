@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=4 uid="uid://t80ofe71ecdb"]
+[gd_scene load_steps=25 format=4 uid="uid://t80ofe71ecdb"]
 
 [ext_resource type="PackedScene" uid="uid://cwiclkrfmwisa" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
+[ext_resource type="Script" uid="uid://ekxr8m0oexg3" path="res://scipts/level.gd" id="1_iw3v5"]
 [ext_resource type="TileSet" uid="uid://da3m3hp55ku0o" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
 [ext_resource type="Texture2D" uid="uid://bpa2gx1opfjgi" path="res://sprites/ItemBorder.png" id="1_uhqny"]
 [ext_resource type="Texture2D" uid="uid://b1oeb7f4dhti" path="res://sprites/TestItem.png" id="2_k5jlv"]
@@ -10,9 +11,11 @@
 [ext_resource type="Script" uid="uid://bwk11eocdyc31" path="res://scipts/upgrades/tv.gd" id="8_opqd1"]
 [ext_resource type="PackedScene" uid="uid://d4mkx2udlhrub" path="res://scenes/machine/Copper_dispenser.tscn" id="8_rccsh"]
 [ext_resource type="PackedScene" uid="uid://cc7wpdpqltvff" path="res://scenes/machine/Gold_dispenser.tscn" id="9_ax7ne"]
+[ext_resource type="PackedScene" uid="uid://b6onrrdoypl6l" path="res://scenes/upgrades/tv.tscn" id="9_gips2"]
 [ext_resource type="Script" uid="uid://dqpa78yua06c7" path="res://scipts/upgrades/oil.gd" id="9_xyj84"]
 [ext_resource type="PackedScene" uid="uid://bygfqsp4s4s1r" path="res://scenes/machine/Silver_dispenser.tscn" id="10_sv41r"]
 [ext_resource type="PackedScene" uid="uid://fvflaq7sw8v5" path="res://scenes/machine/pointer_creator.tscn" id="11_ax7ne"]
+[ext_resource type="Script" uid="uid://cheoc6v20052a" path="res://scipts/upgrades/fresh_sneakers.gd" id="11_wsd7d"]
 [ext_resource type="PackedScene" uid="uid://cry7grcda8fxw" path="res://scenes/machine/Shell_creator.tscn" id="12_sv41r"]
 [ext_resource type="PackedScene" uid="uid://l1xoe3u2boq4" path="res://scenes/machine/Chain_creator.tscn" id="13_m0xki"]
 [ext_resource type="PackedScene" uid="uid://cdccyo4m7i2tw" path="res://ui/star_bar.tscn" id="14_xe3hh"]
@@ -24,6 +27,9 @@ bg_color = Color(0.101961, 0.101961, 0.101961, 0.54902)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gips2"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0.54902)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iw3v5"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.54902)
+
 [sub_resource type="Curve2D" id="Curve2D_opqd1"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 1308, 754, 0, 0, 0, 0, 1001, 584, 0, 0, 0, 0, 882, 583, 0, 0, 0, 0, 802, 583, 0, 0, 0, 0, 730, 583, 0, 0, 0, 0, 284, 584, 0, 0, 0, 0, -39, 739)
@@ -32,6 +38,7 @@ point_count = 7
 
 [node name="Level" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_iw3v5")
 
 [node name="Trashcan" parent="." instance=ExtResource("1_4qegb")]
 z_index = 0
@@ -130,6 +137,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_xyj84")
 text = "Keeps customers distracted"
 vertical_alignment = 1
 
+[node name="TV" parent="GUIRoot/UpgradesMenu/TV" instance=ExtResource("9_gips2")]
+visible = false
+z_index = 1
+position = Vector2(324, 288)
+scale = Vector2(2, 2)
+
 [node name="Oil" type="Button" parent="GUIRoot/UpgradesMenu" node_paths=PackedStringArray("oil_label")]
 offset_left = 30.0
 offset_top = 234.0
@@ -155,7 +168,7 @@ text = "An old machine will appreciate
 its gears greased"
 vertical_alignment = 1
 
-[node name="Fresh Sneakers" type="Button" parent="GUIRoot/UpgradesMenu"]
+[node name="Fresh Sneakers" type="Button" parent="GUIRoot/UpgradesMenu" node_paths=PackedStringArray("sneakers_label")]
 offset_left = 30.0
 offset_top = 333.0
 offset_right = 236.0
@@ -163,11 +176,21 @@ offset_bottom = 399.0
 theme_override_fonts/font = ExtResource("6_dke22")
 theme_override_font_sizes/font_size = 28
 text = "Fresh Sneakers"
+script = ExtResource("11_wsd7d")
+sneakers_label = NodePath("Label")
 
 [node name="Label" type="Label" parent="GUIRoot/UpgradesMenu/Fresh Sneakers"]
+visible = false
+z_index = 2
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 218.0
+offset_right = 500.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("6_dke22")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_iw3v5")
+text = "Shiny boots for an old champ"
+vertical_alignment = 1
 
 [node name="Text" type="Label" parent="GUIRoot/UpgradesMenu"]
 offset_left = 30.0
@@ -216,6 +239,11 @@ script = ExtResource("15_p6oy6")
 
 [connection signal="mouse_entered" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_enter"]
 [connection signal="mouse_exited" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_exit"]
+[connection signal="pressed" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_pressed"]
 [connection signal="pressed" from="GUIRoot/UpgradesMenu/TV" to="Path2D" method="_on_tv_btn_pressed"]
 [connection signal="mouse_entered" from="GUIRoot/UpgradesMenu/Oil" to="GUIRoot/UpgradesMenu/Oil" method="_on_mouse_enter"]
 [connection signal="mouse_exited" from="GUIRoot/UpgradesMenu/Oil" to="GUIRoot/UpgradesMenu/Oil" method="_on_mouse_exit"]
+[connection signal="pressed" from="GUIRoot/UpgradesMenu/Oil" to="GUIRoot/UpgradesMenu/Oil" method="_on_pressed"]
+[connection signal="mouse_entered" from="GUIRoot/UpgradesMenu/Fresh Sneakers" to="GUIRoot/UpgradesMenu/Fresh Sneakers" method="_on_mouse_enter"]
+[connection signal="mouse_exited" from="GUIRoot/UpgradesMenu/Fresh Sneakers" to="GUIRoot/UpgradesMenu/Fresh Sneakers" method="_on_mouse_exit"]
+[connection signal="pressed" from="GUIRoot/UpgradesMenu/Fresh Sneakers" to="GUIRoot/UpgradesMenu/Fresh Sneakers" method="_on_pressed"]

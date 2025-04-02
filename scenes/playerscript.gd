@@ -71,3 +71,6 @@ func set_animation(direction):
 			sprite.play("idle_left")
 		elif last_direction == Direction.RIGHT:
 			sprite.play("idle_right")
+
+func _on_sneakers_btn_pressed():
+	PLAYER_SPEED += PLAYER_SPEED * 0.5

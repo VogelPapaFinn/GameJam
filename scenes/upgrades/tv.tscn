@@ -29,8 +29,10 @@ animations = [{
 [node name="TV" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_0tadq")
+autoplay = "default"
 frame = 1
 frame_progress = 0.00581742
 metadata/_aseprite_wizard_interface_config_ = {

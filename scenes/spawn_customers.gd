@@ -5,9 +5,10 @@ var generated_children = []
 @export var character_max_count: int = 3  # Number of characters to spawn
 var queue_count: int = 0
 var wait_time: float = 30.0
+var timer: Timer
 
 func _ready():
-	var timer = Timer.new()
+	timer = Timer.new()
 	timer.wait_time = 1.0
 	timer.one_shot = false
 	add_child(timer)
