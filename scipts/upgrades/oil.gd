@@ -10,3 +10,6 @@ func _on_mouse_exit():
 
 func _on_pressed():
 	self.disabled = true
+	self.set_text_alignment(HORIZONTAL_ALIGNMENT_LEFT)
+	$checkmark.visible = true
+	self.release_focus()

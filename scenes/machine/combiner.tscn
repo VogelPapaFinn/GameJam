@@ -1,10 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://beh72fldmdwss"]
+[gd_scene load_steps=19 format=3 uid="uid://beh72fldmdwss"]
 
 [ext_resource type="Script" uid="uid://wox80da5j3bc" path="res://scipts/machine_scripts/combiner_script.gd" id="1_4u47f"]
-[ext_resource type="Script" uid="uid://753h7sdkrada" path="res://scipts/machine_scripts/acceptor_scripts/shell_acceptor.gd" id="2_fmhbr"]
-[ext_resource type="Script" uid="uid://bkk6hdxlip85e" path="res://scipts/machine_scripts/acceptor_scripts/chain_acceptor.gd" id="3_umbwf"]
-[ext_resource type="Script" uid="uid://cil44rtaoxmqp" path="res://scipts/machine_scripts/acceptor_scripts/pointer_acceptor.gd" id="4_ghmsf"]
-[ext_resource type="Script" uid="uid://cjxlkqh1u77lt" path="res://scipts/machine_scripts/acceptor_scripts/null_acceptor.gd" id="5_ghmsf"]
+[ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_fmhbr"]
 [ext_resource type="Texture2D" uid="uid://cgvd0cnhqf4nk" path="res://sprites/interactables/conveyor_belt.png" id="5_umbwf"]
 [ext_resource type="Texture2D" uid="uid://dxjctfm0iktpq" path="res://sprites/interactables/assembler_conveyor.png" id="6_ghmsf"]
 [ext_resource type="Texture2D" uid="uid://b5101j6yms5mx" path="res://sprites/interactables/conveyor_belt_animated-Sheet.png" id="7_j7a5e"]
@@ -15,17 +12,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7a5e"]
 size = Vector2(32, 124)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y63fp"]
-size = Vector2(83, 29)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u605p"]
-size = Vector2(81, 28)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ern1i"]
-size = Vector2(87, 26)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irnnw"]
-size = Vector2(76, 45)
+size = Vector2(87, 159)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y63fp"]
 atlas = ExtResource("5_umbwf")
@@ -117,35 +105,14 @@ script = ExtResource("1_4u47f")
 position = Vector2(1, 14)
 shape = SubResource("RectangleShape2D_j7a5e")
 
-[node name="Shell_area" type="Area2D" parent="."]
-script = ExtResource("2_fmhbr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Shell_area"]
-position = Vector2(0, -39)
-shape = SubResource("RectangleShape2D_y63fp")
-
-[node name="Chain_area" type="Area2D" parent="."]
-script = ExtResource("3_umbwf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chain_area"]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_u605p")
-
-[node name="Pointer_area" type="Area2D" parent="."]
-script = ExtResource("4_ghmsf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pointer_area"]
-position = Vector2(0, 23)
-shape = SubResource("RectangleShape2D_ern1i")
-
 [node name="Finished_position" type="Marker2D" parent="."]
 position = Vector2(-29, 59)
 
-[node name="Pickup_area" type="Area2D" parent="."]
-script = ExtResource("5_ghmsf")
+[node name="interact" type="Area2D" parent="."]
+script = ExtResource("2_fmhbr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup_area"]
-position = Vector2(0, 61.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
+position = Vector2(0.5, 6.5)
 shape = SubResource("RectangleShape2D_irnnw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

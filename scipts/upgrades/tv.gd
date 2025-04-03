@@ -22,3 +22,6 @@ func _on_pressed():
 	add_child(tv_instance)
 	tv_instance.visible = true
 	self.set_disabled(true)
+	self.set_text_alignment(HORIZONTAL_ALIGNMENT_LEFT)
+	$checkmark.visible = true
+	self.release_focus()

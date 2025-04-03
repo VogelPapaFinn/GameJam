@@ -29,8 +29,16 @@ func _ready() -> void:
 	$transparent_shell.global_position = $shell_position.global_position
 	
 	$AnimatedSprite2D.play("idle")
+	$interact.machine = self
 
 func use(item: Usable) -> Usable:
+	if !item:
+		if !finished_product:
+			return null
+		finished_product.position = Vector2(0,0)
+		var	tmp	= finished_product
+		finished_product = null
+		return tmp
 	if item.is_in_group("shell"):
 		if current_shell:
 			return item
@@ -94,15 +102,6 @@ func check_for_full():
 		$AnimatedSprite2D.play("working")
 		in_progress = true
 		
-		
-		
-func pick_up() -> Usable:
-	if !finished_product:
-		return null
-	finished_product.position = Vector2(0,0)
-	var	tmp	= finished_product
-	finished_product = null
-	return tmp
 
 func _on_timer_timeout() -> void:
 	#print("timer ended")
@@ -118,7 +117,7 @@ func _on_timer_timeout() -> void:
 	new_clock.get_node("shell").texture = current_shell.get_sprite()
 	new_clock.get_node("chain").texture = current_chain.get_finished_sprite()
 	new_clock.get_node("pointer").texture = current_pointer.get_finished_sprite()
-	
+	new_clock.product = Clock_product.new(current_chain, current_shell, current_pointer)
 	new_clock.position = $Finished_position.position
 	finished_product = new_clock
 	current_shell = null

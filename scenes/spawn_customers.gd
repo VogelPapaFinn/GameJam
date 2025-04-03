@@ -4,7 +4,7 @@ var generated_children = []
 @export var character_scene: PackedScene = preload("res://scenes/customer/customer.tscn")
 @export var character_max_count: int = 3  # Number of characters to spawn
 var queue_count: int = 0
-var wait_time: float = 30.0
+var wait_time: float = 200.0 
 var timer: Timer
 
 func _ready():
