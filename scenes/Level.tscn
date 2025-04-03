@@ -1,6 +1,6 @@
-[gd_scene load_steps=29 format=4 uid="uid://cnwm7qf7roa1k"]
+[gd_scene load_steps=30 format=4 uid="uid://cnwm7qf7roa1k"]
 
-[ext_resource type="PackedScene" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
+[ext_resource type="PackedScene" uid="uid://cwiclkrfmwisa" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
 [ext_resource type="Script" uid="uid://ekxr8m0oexg3" path="res://scipts/level.gd" id="1_iw3v5"]
 [ext_resource type="TileSet" uid="uid://da3m3hp55ku0o" path="res://scenes/LevelTileMap.tres" id="1_qifjx"]
 [ext_resource type="Texture2D" uid="uid://bpa2gx1opfjgi" path="res://sprites/ItemBorder.png" id="1_uhqny"]
@@ -27,6 +27,10 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyj84"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0.54902)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_vs87s"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAAAIAQAAUklGRgABAABXRUJQVlA4TPMAAAAvH8AHEH+gKJKkZv8XyQjCBAr5JlNIUhNJCkPoMnLo0MHgXwEGVEO2Qt0E7lcIaYQUxRMluSDmPwBAymwkoUK50eqN6LwywAZYD19M54R94DDvwGm1bcvyj2ILICP8L078GxJ9BKJDdbJDd5cv0shOd7p/748NENF/tW3bMBJSt+QM5i9l1YgvIcjCiwAAZgB4ohA48WWDwIuEYLD8OwmyBjzFs5FMq9Mx0ckfqca8TmedTrmqveBzOOp02u7mNq/DWdNQaTa/Lh/JaqbS+QqXQadjwe4GkEBC734VS0T2L0QuEfMUAIh8ohDUiMxTFuXvZQAA")
+size_override = Vector2(32, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gips2"]
 bg_color = Color(0.101961, 0.101961, 0.101961, 0.54902)
@@ -123,8 +127,8 @@ offset_top = 134.0
 offset_right = 236.0
 offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 20
-text = "Old TV"
+theme_override_font_sizes/font_size = 32
+alignment = 2
 script = ExtResource("8_opqd1")
 tv_label = NodePath("Label")
 
@@ -154,7 +158,10 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_0akr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="GUIRoot/UpgradesMenu/TV"]
-scale = Vector2(3, 3)
+texture_filter = 1
+position = Vector2(104, 32)
+scale = Vector2(2, 2)
+texture = SubResource("PortableCompressedTexture2D_vs87s")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -171,6 +178,7 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "res://sprites/upgrades/tv.aseprite"
 }
+metadata/_aseprite_wizard_source_file_hash_ = "12a123c55323ecaab87a2d04bc3029f9"
 
 [node name="Oil" type="Button" parent="GUIRoot/UpgradesMenu" node_paths=PackedStringArray("oil_label")]
 offset_left = 30.0
@@ -178,8 +186,8 @@ offset_top = 234.0
 offset_right = 236.0
 offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 20
-text = "Oil"
+theme_override_font_sizes/font_size = 32
+alignment = 2
 script = ExtResource("9_xyj84")
 oil_label = NodePath("Label")
 
@@ -209,7 +217,8 @@ offset_top = 333.0
 offset_right = 236.0
 offset_bottom = 399.0
 theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 32
+alignment = 2
 script = ExtResource("11_wsd7d")
 sneakers_label = NodePath("Label")
 
