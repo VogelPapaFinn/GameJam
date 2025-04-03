@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ClockWork"
-run/main_scene="uid://booyo7tkt0ak4"
+run/main_scene="uid://bqo7e2km8g2h5"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

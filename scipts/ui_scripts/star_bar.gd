@@ -8,7 +8,6 @@ func _ready() -> void:
 	Scenemanager.star_manager = self
 
 func customer_left_angry():
-	print("angry")
 	var random_deduction = randf_range(-0.5, 0.5)
 	var change = - default_angry_deduction + random_deduction
 	update_stars(change)
@@ -29,7 +28,6 @@ func customer_got_wrong_order():
 
 
 func update_stars(change: int):
-	print("updated")
 	$TextureProgressBar.value += change 
 	if $TextureProgressBar.value <= 0:
 		zero_stars()

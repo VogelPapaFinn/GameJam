@@ -82,8 +82,6 @@ func use(item: Usable) -> Usable:
 		check_for_full()
 		return null
 	else:
-		print("match fialed")
-		print(item.get_groups())
 		return item
 
 func check_for_full():
@@ -94,7 +92,6 @@ func check_for_full():
 		$Timer.wait_time = timer_length
 		$AudioStreamPlayer2D.play()
 		$AudioStreamPlayer2D/AnimationPlayer.play("fade_in")
-		print($Timer.wait_time)
 		$Timer.start()
 		
 		$transparent_chain.visible = false
@@ -106,7 +103,6 @@ func check_for_full():
 		
 
 func _on_timer_timeout() -> void:
-	#print("timer ended")
 	move_items = false
 	in_progress = false
 	
