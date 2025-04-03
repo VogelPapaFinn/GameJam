@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dxjctfm0iktpq" path="res://sprites/interactables/assembler_conveyor.png" id="6_ghmsf"]
 [ext_resource type="AudioStream" uid="uid://cu1ksynlfwbry" path="res://sounds/machine1.wav" id="6_umbwf"]
 [ext_resource type="Texture2D" uid="uid://b5101j6yms5mx" path="res://sprites/interactables/conveyor_belt_animated-Sheet.png" id="7_j7a5e"]
+[ext_resource type="Texture2D" uid="uid://ldh7846icp2w" path="res://sprites/items/shell_transparent.png" id="9_u605p"]
+[ext_resource type="Texture2D" uid="uid://c6tmkrkxh0gov" path="res://sprites/items/clock_hands_transparent.png" id="10_ern1i"]
+[ext_resource type="Texture2D" uid="uid://bdarqrs4wxl7q" path="res://sprites/items/chain_transparent.png" id="11_ern1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j7a5e"]
 size = Vector2(32, 124)
@@ -171,8 +174,7 @@ texture = ExtResource("5_umbwf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_piixd")
-animation = &"working"
-frame_progress = 0.844959
+animation = &"idle"
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(1, 58)
@@ -193,6 +195,7 @@ position = Vector2(1, 40)
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+<<<<<<< HEAD
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_umbwf")
 volume_db = -20.0
@@ -201,6 +204,16 @@ volume_db = -20.0
 libraries = {
 &"": SubResource("AnimationLibrary_j7a5e")
 }
+=======
+[node name="transparent_shell" type="Sprite2D" parent="."]
+texture = ExtResource("9_u605p")
+
+[node name="transparent_pointer" type="Sprite2D" parent="."]
+texture = ExtResource("10_ern1i")
+
+[node name="transparent_chain" type="Sprite2D" parent="."]
+texture = ExtResource("11_ern1i")
+>>>>>>> cba596d357479ee4b6020b67324a0b4190d0f643
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AudioStreamPlayer2D/AnimationPlayer" to="." method="_on_fade_out_finished"]

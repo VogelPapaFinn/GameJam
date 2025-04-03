@@ -587,7 +587,7 @@ animation = &"idle_down_holding_item"
 
 [node name="AnimatedPlayerSprite_player1" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lw0jh")
-animation = &"moving_up_holding_item"
+animation = &"idle_down_holding_item"
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 visible = false

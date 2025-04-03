@@ -10,6 +10,7 @@ var	finished_product
 var display_shell
 var display_pointer
 var display_chain
+
 var	finished_clock	= preload("res://scenes/item/finished_clock.tscn")
 var chain = preload("res://scenes/item/chain.tscn")
 #var shell = preload("res://scenes/item/Clock_shell.gd")
@@ -18,6 +19,16 @@ var pointer = preload("res://scenes/pointer.tscn")
 var move_items: bool = false
 
 func _ready() -> void:
+#	$Chain_area.machine	= self
+#	$Pointer_area.machine =	self
+#	$Shell_area.machine	= self
+#	$Pickup_area.machine = self
+	
+	$transparent_chain.global_position = $chain_position.global_position
+	$transparent_pointer.global_position = $pointer_position.global_position
+	$transparent_shell.global_position = $shell_position.global_position
+	
+	$AnimatedSprite2D.play("idle")
 	$interact.machine = self
 
 func use(item: Usable) -> Usable:
@@ -85,6 +96,11 @@ func check_for_full():
 		$AudioStreamPlayer2D/AnimationPlayer.play("fade_in")
 		print($Timer.wait_time)
 		$Timer.start()
+		
+		$transparent_chain.visible = false
+		$transparent_shell.visible = false
+		$transparent_pointer.visible = false
+		
 		$AnimatedSprite2D.play("working")
 		in_progress = true
 		
@@ -96,6 +112,10 @@ func _on_timer_timeout() -> void:
 	
 	$AnimatedSprite2D.play("idle")
 	$AudioStreamPlayer2D/AnimationPlayer.play("fade_out")
+	$transparent_chain.visible = false
+	$transparent_shell.visible = false
+	$transparent_pointer.visible = false
+	
 	var	new_clock =	finished_clock.instantiate()
 	new_clock.get_node("shell").texture = current_shell.get_sprite()
 	new_clock.get_node("chain").texture = current_chain.get_finished_sprite()

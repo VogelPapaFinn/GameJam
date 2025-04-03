@@ -110,7 +110,6 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_k1vos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("2_f0k10")
 
 [node name="Timer" type="Timer" parent="."]
@@ -137,6 +136,7 @@ y_sort_enabled = true
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_lsp8t")
 animation = &"working"
+frame_progress = 0.961508
 offset = Vector2(0, 32)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
