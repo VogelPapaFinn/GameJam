@@ -9,7 +9,7 @@ var initCopper : bool = false
 
 func _ready():
 	# Get highscore
-	$CanvasLayer2/VBoxContainer/highscore.text = "HIGSCHORE: " + Scenemanager.highscore
+	$CanvasLayer2/VBoxContainer/highscore.text = "HIGSCHORE: " + str(Scenemanager.highscore / 1000)
 	
 	reverseSilverTween()
 	reverseGoldTween()
