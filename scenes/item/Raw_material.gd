@@ -8,6 +8,9 @@ var gold_sprite = preload("res://sprites/items/gold_lump.png")
 var silver_sprite = preload("res://sprites/items/silver_lump.png")
 var copper_sprite = preload("res://sprites/items/copper_lump.png")
 
+func _init() -> void:
+    add_to_group("raw_material")
+
 func get_sprite() -> Resource:
     match material_name:
         RAW_MATERIAL.GOLD:
@@ -17,3 +20,6 @@ func get_sprite() -> Resource:
         RAW_MATERIAL.COPPER:
             return copper_sprite
     return null
+    
+func set_sprite() -> void:
+    $Sprite2D.texture = get_sprite()
