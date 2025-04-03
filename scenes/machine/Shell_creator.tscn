@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cry7grcda8fxw"]
+[gd_scene load_steps=20 format=3 uid="uid://cry7grcda8fxw"]
 
 [ext_resource type="Texture2D" uid="uid://cumwc5flg3wub" path="res://sprites/interactables/pressing_machine.png" id="1_q7h82"]
 [ext_resource type="Script" uid="uid://deiwuk4rsg20k" path="res://scenes/machine/Shell_creator.gd" id="1_uwq58"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="3_k42o5"]
 [ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_urc6s"]
 [ext_resource type="Texture2D" uid="uid://bm6m8j4x8hjp4" path="res://sprites/interactables/pressing_machine_animation-Sheet.png" id="5_k42o5"]
+[ext_resource type="AudioStream" uid="uid://bxi5apj8xx13t" path="res://sounds/hydraulicdoorsnd-107449.mp3" id="6_7a2qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1vos"]
 size = Vector2(30, 50)
@@ -133,6 +134,9 @@ sprite_frames = SubResource("SpriteFrames_bjqbw")
 animation = &"working"
 frame_progress = 0.61213
 offset = Vector2(0, 32)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7a2qk")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interact_area_entered"]
