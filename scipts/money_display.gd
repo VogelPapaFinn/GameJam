@@ -7,7 +7,7 @@ extends Node2D
 
 func _ready() -> void:
 	Scenemanager.money_display = self
-	$Label.text = "$" + str(money_counter)
+	$Label.text = str(money_counter)
 
 func get_money() -> int:
 	return money_counter
@@ -37,7 +37,7 @@ func order_complete(order: Clock_product):
 			money_counter += 2
 		Raw_material.RAW_MATERIAL.COPPER:
 			money_counter += 1
-	$Label.text = "$" + str(money_counter)
+	$Label.text = str(money_counter)
 
 func _on_money_changed():
-	$Label.text = "$" + str(money_counter)
+	$Label.text = str(money_counter)
