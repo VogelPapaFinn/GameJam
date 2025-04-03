@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d3esi6kv4v6vg"
+path="res://.godot/imported/chain_transparent.aseprite-8292ecb279478a6d123f7d1425afb5c3.res"
+
+[deps]
+
+source_file="res://sprites/items/chain_transparent.aseprite"
+dest_files=["res://.godot/imported/chain_transparent.aseprite-8292ecb279478a6d123f7d1425afb5c3.res"]
+
+[params]
+
