@@ -3,7 +3,7 @@ extends StaticBody2D
 var in_progress = false
 var current_material 
 var chain = preload("res://scenes/item/chain.tscn")
-@export var timer_length = 5
+@export var timer_length = 3.5 
 var active_chain
 
 func _ready():
@@ -28,6 +28,8 @@ func use(usable: Usable) -> Usable:
 	current_material = usable.material_name
 	$Timer.wait_time = timer_length
 	$Timer.start()    
+	$AudioStreamPlayer2D.play()
+	$AudioStreamPlayer2D/AnimationPlayer.play("fade_in")
 	$Loading_bar.start_loading_bar(timer_length)
 	in_progress = true
 	return null 
@@ -35,7 +37,7 @@ func use(usable: Usable) -> Usable:
 
 func _on_timer_timeout() -> void:
 	in_progress = false
-	
+	$AudioStreamPlayer2D/AnimationPlayer.play("fade_out")
 	$AnimatedSprite2D.play("idle")
 	
 	var new_chain = chain.instantiate()
@@ -51,3 +53,8 @@ func _on_interact_area_entered(area:Area2D) -> void:
 
 func _on_oil_btn_pressed():
 	timer_length *= 0.75
+
+
+func _on_animation_player_animation_finished(anim_name:StringName) -> void:
+	if anim_name == "fade_out":
+		$AudioStreamPlayer2D/AnimationPlayer.stop()

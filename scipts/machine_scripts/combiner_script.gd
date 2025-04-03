@@ -81,6 +81,8 @@ func check_for_full():
 		
 		
 		$Timer.wait_time = timer_length
+		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer2D/AnimationPlayer.play("fade_in")
 		print($Timer.wait_time)
 		$Timer.start()
 		$AnimatedSprite2D.play("working")
@@ -93,7 +95,7 @@ func _on_timer_timeout() -> void:
 	in_progress = false
 	
 	$AnimatedSprite2D.play("idle")
-	
+	$AudioStreamPlayer2D/AnimationPlayer.play("fade_out")
 	var	new_clock =	finished_clock.instantiate()
 	new_clock.get_node("shell").texture = current_shell.get_sprite()
 	new_clock.get_node("chain").texture = current_chain.get_finished_sprite()
@@ -122,3 +124,8 @@ func _process(delta: float) -> void:
 			display_shell.position.y = display_shell.position.y + 1
 		else:
 			display_shell.visible = false
+
+
+func _on_fade_out_finished(anim_name: StringName) -> void:
+	if anim_name == "fade_out":
+		$AnimatedSprite2D.stop()

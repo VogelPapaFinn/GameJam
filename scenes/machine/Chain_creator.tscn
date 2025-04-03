@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://l1xoe3u2boq4"]
+[gd_scene load_steps=17 format=3 uid="uid://l1xoe3u2boq4"]
 
 [ext_resource type="Script" uid="uid://5kpwxtktdl4g" path="res://scenes/machine/Chain_creator.gd" id="1_mqe7t"]
 [ext_resource type="Texture2D" uid="uid://bfyd7spxmqofg" path="res://sprites/interactables/rolling_machine.png" id="2_f0k10"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="3_5i21c"]
 [ext_resource type="PackedScene" uid="uid://chs8kg0ynxhi4" path="res://ui/loading_bar.tscn" id="4_f0k10"]
 [ext_resource type="Texture2D" uid="uid://c3oujo2eekff" path="res://sprites/interactables/rolling_machine_animated-Sheet.png" id="5_5i21c"]
+[ext_resource type="AudioStream" uid="uid://jkuh0wjhoori" path="res://sounds/drill2.wav" id="6_o4im3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k1vos"]
 size = Vector2(30, 50)
@@ -46,6 +47,60 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="Animation" id="Animation_t7t0l"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-20.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_1482y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+
+[sub_resource type="Animation" id="Animation_lsp8t"]
+resource_name = "fade_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -30.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_68vih"]
+_data = {
+&"RESET": SubResource("Animation_1482y"),
+&"fade_in": SubResource("Animation_t7t0l"),
+&"fade_out": SubResource("Animation_lsp8t")
+}
+
 [node name="Chain_creator" type="StaticBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_mqe7t")
@@ -84,5 +139,16 @@ sprite_frames = SubResource("SpriteFrames_lsp8t")
 animation = &"working"
 offset = Vector2(0, 32)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_o4im3")
+volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_68vih")
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interact_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="animation_finished" from="AudioStreamPlayer2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
