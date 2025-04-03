@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://cnwm7qf7roa1k"]
+[gd_scene load_steps=31 format=4 uid="uid://cnwm7qf7roa1k"]
 
 [ext_resource type="PackedScene" uid="uid://cwiclkrfmwisa" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
 [ext_resource type="Script" uid="uid://ekxr8m0oexg3" path="res://scipts/level.gd" id="1_iw3v5"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://cheoc6v20052a" path="res://scipts/upgrades/fresh_sneakers.gd" id="11_wsd7d"]
 [ext_resource type="PackedScene" uid="uid://cry7grcda8fxw" path="res://scenes/machine/Shell_creator.tscn" id="12_sv41r"]
 [ext_resource type="PackedScene" uid="uid://l1xoe3u2boq4" path="res://scenes/machine/Chain_creator.tscn" id="13_m0xki"]
+[ext_resource type="Texture2D" uid="uid://b4ibcpcvursp0" path="res://ui/sprites/oil.png" id="13_sv6t6"]
 [ext_resource type="Texture2D" uid="uid://b3bdmh0s5iq8j" path="res://ui/sprites/boots.png" id="14_vs87s"]
 [ext_resource type="PackedScene" uid="uid://cdccyo4m7i2tw" path="res://ui/star_bar.tscn" id="14_xe3hh"]
 [ext_resource type="Script" uid="uid://cis3vp7dp64ga" path="res://scenes/spawn_customers.gd" id="15_p6oy6"]
@@ -159,7 +160,7 @@ texture = ExtResource("11_0akr6")
 
 [node name="Sprite2D" type="Sprite2D" parent="GUIRoot/UpgradesMenu/TV"]
 texture_filter = 1
-position = Vector2(104, 32)
+position = Vector2(96, 33)
 scale = Vector2(2, 2)
 texture = SubResource("PortableCompressedTexture2D_vs87s")
 metadata/_aseprite_wizard_interface_config_ = {
@@ -210,6 +211,11 @@ visible = false
 position = Vector2(173, 33)
 scale = Vector2(2, 2)
 texture = ExtResource("11_0akr6")
+
+[node name="Sprite2D" type="Sprite2D" parent="GUIRoot/UpgradesMenu/Oil"]
+position = Vector2(101, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("13_sv6t6")
 
 [node name="Fresh Sneakers" type="Button" parent="GUIRoot/UpgradesMenu" node_paths=PackedStringArray("sneakers_label")]
 offset_left = 30.0
