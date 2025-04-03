@@ -154,7 +154,7 @@ scale = Vector2(2, 2)
 
 [node name="checkmark" type="Sprite2D" parent="GUIRoot/UpgradesMenu/TV"]
 visible = false
-position = Vector2(173, 33)
+position = Vector2(32, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("11_0akr6")
 
@@ -208,7 +208,7 @@ vertical_alignment = 1
 
 [node name="checkmark" type="Sprite2D" parent="GUIRoot/UpgradesMenu/Oil"]
 visible = false
-position = Vector2(173, 33)
+position = Vector2(32, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("11_0akr6")
 
@@ -243,7 +243,7 @@ vertical_alignment = 1
 
 [node name="checkmark" type="Sprite2D" parent="GUIRoot/UpgradesMenu/Fresh Sneakers"]
 visible = false
-position = Vector2(173, 33)
+position = Vector2(32, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("11_0akr6")
 

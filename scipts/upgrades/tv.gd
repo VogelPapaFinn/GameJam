@@ -25,4 +25,5 @@ func _on_pressed():
 		tv_instance.visible = true
 		self.set_disabled(true)
 		$"../../../Path2D"._on_tv_btn_pressed()
+		$checkmark.visible = true
 		self.release_focus()
