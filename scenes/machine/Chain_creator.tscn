@@ -110,6 +110,7 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_k1vos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_f0k10")
 
 [node name="Timer" type="Timer" parent="."]
