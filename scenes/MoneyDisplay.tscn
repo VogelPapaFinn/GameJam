@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=4 uid="uid://eijg4jl5llen"]
+
+[ext_resource type="FontFile" uid="uid://cntuisd1j68yb" path="res://res/Pixel Primitive.ttf" id="1_iet27"]
+[ext_resource type="Script" uid="uid://dlemhgq4xjs47" path="res://scipts/money_display.gd" id="1_lj381"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_arnqv"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABuAAAAUklGRmYAAABXRUJQVlA4TFoAAAAvD8ADEBegIG0Dpv597ioSCCT5o80yhIK0DVjcPQeb/wDe6gOb2LbiPLJ5yFeDBOpfp4oaaur96kRERP9D6ZaaK0LI8FSw2outXv4Ntg/e2tyytydCUHMp3QI=")
+size_override = Vector2(16, 16)
+
+[node name="MoneyDisplay" type="Node2D"]
+script = ExtResource("1_lj381")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+texture = SubResource("PortableCompressedTexture2D_arnqv")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"slice": "",
+"source": "res://sprites/placeholder_coin.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "fcf37c7f638625db300cfd952af340e1"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 3.0
+offset_right = 92.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("1_iet27")
+text = "$$$"
+vertical_alignment = 1
