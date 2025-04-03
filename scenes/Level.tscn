@@ -121,7 +121,7 @@ offset_top = 134.0
 offset_right = 236.0
 offset_bottom = 200.0
 theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 text = "Old TV"
 script = ExtResource("8_opqd1")
 tv_label = NodePath("Label")
@@ -151,7 +151,7 @@ offset_top = 234.0
 offset_right = 236.0
 offset_bottom = 300.0
 theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 text = "Oil"
 script = ExtResource("9_xyj84")
 oil_label = NodePath("Label")
@@ -176,7 +176,7 @@ offset_top = 333.0
 offset_right = 236.0
 offset_bottom = 399.0
 theme_override_fonts/font = ExtResource("6_dke22")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 20
 text = "Fresh Sneakers"
 script = ExtResource("11_wsd7d")
 sneakers_label = NodePath("Label")
@@ -204,6 +204,11 @@ theme_override_font_sizes/font_size = 28
 text = "Upgrades:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MoneyDisplay" parent="GUIRoot" instance=ExtResource("21_40jy1")]
+z_index = 1
+position = Vector2(1051, 22)
+scale = Vector2(4, 4)
 
 [node name="Copper_dispenser" parent="." instance=ExtResource("8_rccsh")]
 position = Vector2(354, 490)
@@ -239,10 +244,6 @@ offset_bottom = 23.0
 curve = SubResource("Curve2D_opqd1")
 script = ExtResource("15_p6oy6")
 
-[node name="MoneyDisplay" parent="." instance=ExtResource("21_40jy1")]
-position = Vector2(1051, 22)
-scale = Vector2(4, 4)
-
 [node name="Combiner" parent="." instance=ExtResource("21_40jy2")]
 position = Vector2(751, 362)
 scale = Vector2(2, 2)
@@ -250,7 +251,6 @@ scale = Vector2(2, 2)
 [connection signal="mouse_entered" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_enter"]
 [connection signal="mouse_exited" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_mouse_exit"]
 [connection signal="pressed" from="GUIRoot/UpgradesMenu/TV" to="GUIRoot/UpgradesMenu/TV" method="_on_pressed"]
-[connection signal="pressed" from="GUIRoot/UpgradesMenu/TV" to="Path2D" method="_on_tv_btn_pressed"]
 [connection signal="mouse_entered" from="GUIRoot/UpgradesMenu/Oil" to="GUIRoot/UpgradesMenu/Oil" method="_on_mouse_enter"]
 [connection signal="mouse_exited" from="GUIRoot/UpgradesMenu/Oil" to="GUIRoot/UpgradesMenu/Oil" method="_on_mouse_exit"]
 [connection signal="pressed" from="GUIRoot/UpgradesMenu/Oil" to="GUIRoot/UpgradesMenu/Oil" method="_on_pressed"]

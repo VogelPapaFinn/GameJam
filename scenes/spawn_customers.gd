@@ -46,4 +46,4 @@ func spawn_character(id: int = 0):
 	path_follow.start_moving()
 
 func _on_tv_btn_pressed():
-	wait_time = 45.0
+	wait_time *= 1.5
