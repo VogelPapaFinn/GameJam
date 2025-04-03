@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://beh72fldmdwss"]
+[gd_scene load_steps=24 format=3 uid="uid://beh72fldmdwss"]
 
 [ext_resource type="Script" uid="uid://wox80da5j3bc" path="res://scipts/machine_scripts/combiner_script.gd" id="1_4u47f"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_fmhbr"]
 [ext_resource type="Texture2D" uid="uid://cgvd0cnhqf4nk" path="res://sprites/interactables/conveyor_belt.png" id="5_umbwf"]
 [ext_resource type="Texture2D" uid="uid://dxjctfm0iktpq" path="res://sprites/interactables/assembler_conveyor.png" id="6_ghmsf"]
+[ext_resource type="AudioStream" uid="uid://cu1ksynlfwbry" path="res://sounds/machine1.wav" id="6_umbwf"]
 [ext_resource type="Texture2D" uid="uid://b5101j6yms5mx" path="res://sprites/interactables/conveyor_belt_animated-Sheet.png" id="7_j7a5e"]
 [ext_resource type="Texture2D" uid="uid://ldh7846icp2w" path="res://sprites/items/shell_transparent.png" id="9_u605p"]
 [ext_resource type="Texture2D" uid="uid://c6tmkrkxh0gov" path="res://sprites/items/clock_hands_transparent.png" id="10_ern1i"]
@@ -98,6 +99,58 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_umbwf"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-20.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ghmsf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-20.0]
+}
+
+[sub_resource type="Animation" id="Animation_j7a5e"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -30.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j7a5e"]
+_data = {
+&"RESET": SubResource("Animation_ghmsf"),
+&"fade_in": SubResource("Animation_umbwf"),
+&"fade_out": SubResource("Animation_j7a5e")
+}
+
 [node name="Combiner" type="StaticBody2D"]
 script = ExtResource("1_4u47f")
 
@@ -142,6 +195,16 @@ position = Vector2(1, 40)
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+<<<<<<< HEAD
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_umbwf")
+volume_db = -20.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_j7a5e")
+}
+=======
 [node name="transparent_shell" type="Sprite2D" parent="."]
 texture = ExtResource("9_u605p")
 
@@ -150,5 +213,7 @@ texture = ExtResource("10_ern1i")
 
 [node name="transparent_chain" type="Sprite2D" parent="."]
 texture = ExtResource("11_ern1i")
+>>>>>>> cba596d357479ee4b6020b67324a0b4190d0f643
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AudioStreamPlayer2D/AnimationPlayer" to="." method="_on_fade_out_finished"]

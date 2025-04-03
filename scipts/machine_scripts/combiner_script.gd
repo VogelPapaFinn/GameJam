@@ -92,6 +92,8 @@ func check_for_full():
 		
 		
 		$Timer.wait_time = timer_length
+		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer2D/AnimationPlayer.play("fade_in")
 		print($Timer.wait_time)
 		$Timer.start()
 		
@@ -109,6 +111,7 @@ func _on_timer_timeout() -> void:
 	in_progress = false
 	
 	$AnimatedSprite2D.play("idle")
+	$AudioStreamPlayer2D/AnimationPlayer.play("fade_out")
 	$transparent_chain.visible = false
 	$transparent_shell.visible = false
 	$transparent_pointer.visible = false
@@ -141,3 +144,8 @@ func _process(delta: float) -> void:
 			display_shell.position.y = display_shell.position.y + 1
 		else:
 			display_shell.visible = false
+
+
+func _on_fade_out_finished(anim_name: StringName) -> void:
+	if anim_name == "fade_out":
+		$AnimatedSprite2D.stop()

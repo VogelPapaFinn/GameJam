@@ -24,6 +24,8 @@ func use(usable: Usable) -> Usable:
 		return usable 
 
 	$AnimatedSprite2D.play("working")
+	$AudioStreamPlayer2D.play()
+	$AudioStreamPlayer2D/AnimationPlayer.play("fade_in")
 	
 	current_material = usable.material_name
 	$Timer.wait_time = timer_length
@@ -37,6 +39,7 @@ func use(usable: Usable) -> Usable:
 func _on_timer_timeout() -> void:
 	in_progress = false
 	$AnimatedSprite2D.play("idle")
+	$AudioStreamPlayer2D/AnimationPlayer.play("fade_out")
 	var new_pointer = pointer.instantiate()
 	add_child(new_pointer)
 	new_pointer.raw_material = current_material
@@ -50,3 +53,8 @@ func _on_interact_area_entered(area:Area2D) -> void:
 
 func _on_oil_btn_pressed():
 	timer_length *= 0.75
+
+
+func _on_animation_player_animation_finished(anim_name:StringName) -> void:
+	if anim_name == "fade_out":
+		$AudioStreamPlayer2D.stop()
