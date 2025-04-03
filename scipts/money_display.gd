@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var money_counter: int = 100:
+@export var money_counter: int = 0:
 	set(new_value):
 		money_counter = new_value
 		_on_money_changed()
