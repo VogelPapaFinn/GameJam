@@ -108,9 +108,9 @@ func _on_timer_timeout() -> void:
 	
 	$AnimatedSprite2D.play("idle")
 	$AudioStreamPlayer2D/AnimationPlayer.play("fade_out")
-	$transparent_chain.visible = false
-	$transparent_shell.visible = false
-	$transparent_pointer.visible = false
+	$transparent_chain.visible = true
+	$transparent_shell.visible = true
+	$transparent_pointer.visible = true
 	
 	var	new_clock =	finished_clock.instantiate()
 	new_clock.get_node("shell").texture = current_shell.get_sprite()
