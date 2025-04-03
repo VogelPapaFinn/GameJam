@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://cntuisd1j68yb" path="res://res/Pixel Primitive.ttf" id="1_iet27"]
 [ext_resource type="Script" uid="uid://dlemhgq4xjs47" path="res://scipts/money_display.gd" id="1_lj381"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_arnqv"]
-_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAABuAAAAUklGRmYAAABXRUJQVlA4TFoAAAAvD8ADEBegIG0Dpv597ioSCCT5o80yhIK0DVjcPQeb/wDe6gOb2LbiPLJ5yFeDBOpfp4oaaur96kRERP9D6ZaaK0LI8FSw2outXv4Ntg/e2tyytydCUHMp3QI=")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_lj381"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEAAAABAAAAB8AAAAUklGRnQAAABXRUJQVlA4TGgAAAAvD8ADEB8gECD8H2oQYEVIkPj/rZEmECC8alZiYP6D0FY2sK2trcl3DrU4D50juEyOK7gBlTWO4DA522ZAl4jof8A2gOKEdQqSZw+tpWQ11weXXcCdL+wOKbtZSvaXWUKrUxCIE9hNAA==")
 size_override = Vector2(16, 16)
 
 [node name="MoneyDisplay" type="Node2D"]
@@ -13,7 +13,7 @@ script = ExtResource("1_lj381")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(8, 8)
-texture = SubResource("PortableCompressedTexture2D_arnqv")
+texture = SubResource("PortableCompressedTexture2D_lj381")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -28,9 +28,9 @@ metadata/_aseprite_wizard_config_ = {
 "only_visible": false,
 "player": "",
 "slice": "",
-"source": "res://sprites/placeholder_coin.aseprite"
+"source": "res://sprites/coin.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "fcf37c7f638625db300cfd952af340e1"
+metadata/_aseprite_wizard_source_file_hash_ = "3b73d1bf3ab3ace2b80cb0193e2c7c13"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 20.0
