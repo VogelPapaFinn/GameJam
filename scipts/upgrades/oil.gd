@@ -20,4 +20,5 @@ func _on_pressed():
 		$"../../../Pointer_creator"._on_oil_btn_pressed()
 		$"../../../Shell_creator"._on_oil_btn_pressed()
 		$"../../../Chain_creator"._on_oil_btn_pressed()
+		$checkmark.visible = true
 		self.release_focus()
