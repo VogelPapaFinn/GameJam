@@ -18,12 +18,16 @@ var pointer = preload("res://scenes/pointer.tscn")
 var move_items: bool = false
 
 func _ready() -> void:
-	$Chain_area.machine	= self
-	$Pointer_area.machine =	self
-	$Shell_area.machine	= self
-	$Pickup_area.machine = self
+	$interact.machine = self
 
 func use(item: Usable) -> Usable:
+	if !item:
+		if !finished_product:
+			return null
+		finished_product.position = Vector2(0,0)
+		var	tmp	= finished_product
+		finished_product = null
+		return tmp
 	if item.is_in_group("shell"):
 		if current_shell:
 			return item
@@ -82,15 +86,6 @@ func check_for_full():
 		$AnimatedSprite2D.play("working")
 		in_progress = true
 		
-		
-		
-func pick_up() -> Usable:
-	if !finished_product:
-		return null
-	finished_product.position = Vector2(0,0)
-	var	tmp	= finished_product
-	finished_product = null
-	return tmp
 
 func _on_timer_timeout() -> void:
 	#print("timer ended")
