@@ -20,7 +20,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 max_value = 5.0
 step = 0.1
-value = 4.0
+value = 1.0
 texture_under = ExtResource("2_5gax5")
 texture_progress = ExtResource("3_p4mps")
 

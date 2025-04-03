@@ -5,3 +5,5 @@ var money_display
 
 var pl1
 var pl2
+
+var highscore

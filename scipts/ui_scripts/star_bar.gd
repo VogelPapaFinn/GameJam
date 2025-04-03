@@ -1,5 +1,7 @@
 extends Control
 
+@onready var startTime = Time.get_ticks_msec()
+
 const default_angry_deduction = 1
 const default_happy_deduction = 1
 const default_wrong_deduction = 1.5
@@ -33,4 +35,6 @@ func update_stars(change: int):
 		zero_stars()
 
 func zero_stars():
-	pass
+	var highscore = Time.get_ticks_msec() - startTime
+	Scenemanager.highscore = highscore
+	get_tree().change_scene_to_file("res://ui/death.tscn")

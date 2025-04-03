@@ -1,14 +1,14 @@
 [gd_scene load_steps=22 format=3 uid="uid://bqo7e2km8g2h5"]
 
 [ext_resource type="Texture2D" uid="uid://b5mhyna6dowog" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[1] Normal.png" id="1_187hc"]
-[ext_resource type="Script" path="res://scipts/mainmenu.gd" id="1_odxga"]
+[ext_resource type="Script" uid="uid://2vksdol6ie11" path="res://scipts/mainmenu.gd" id="1_odxga"]
 [ext_resource type="Texture2D" uid="uid://s8pg3i7q7it1" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[2] Clicked.png" id="2_4amms"]
 [ext_resource type="Texture2D" uid="uid://b2kyq1nnwxpqu" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[3] Hover.png" id="3_uvrly"]
 [ext_resource type="FontFile" uid="uid://cntuisd1j68yb" path="res://res/Pixel Primitive.ttf" id="4_4amms"]
-[ext_resource type="Script" path="res://ui/startButton.gd" id="5_0djjy"]
+[ext_resource type="Script" uid="uid://bjrl8k6scaypy" path="res://ui/startButton.gd" id="5_0djjy"]
 [ext_resource type="Texture2D" uid="uid://baxk5on8e6ojf" path="res://sprites/items/silver_lump.png" id="5_ledsr"]
-[ext_resource type="Script" path="res://ui/closeButton.gd" id="6_awnty"]
-[ext_resource type="Script" path="res://ui/settingsButton.gd" id="6_foao3"]
+[ext_resource type="Script" uid="uid://d2ipk7bxjv58f" path="res://ui/closeButton.gd" id="6_awnty"]
+[ext_resource type="Script" uid="uid://bn11uykgwb2en" path="res://ui/settingsButton.gd" id="6_foao3"]
 [ext_resource type="Texture2D" uid="uid://8lphl2fq0kn1" path="res://sprites/items/silver_clock_hands.png" id="6_odxga"]
 [ext_resource type="Texture2D" uid="uid://bhxp0vu566gcc" path="res://sprites/items/silver_chain.png" id="7_awnty"]
 [ext_resource type="Texture2D" uid="uid://f1487yuh41x0" path="res://sprites/SpeechBubble_reversed.png" id="7_foao3"]
@@ -182,190 +182,190 @@ theme_override_font_sizes/font_size = 64
 text = "Clock Work"
 horizontal_alignment = 1
 
-[node name="Background_1" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
 
-[node name="Silver" type="Node2D" parent="Background_1"]
+[node name="Silver" type="Node2D" parent="Background"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(205, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("5_ledsr")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(405, 668)
 scale = Vector2(2, 2)
 texture = ExtResource("6_odxga")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(881, 296)
 scale = Vector2(2, 2)
 texture = ExtResource("7_awnty")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(291, 175)
 scale = Vector2(2, 2)
 texture = ExtResource("8_yli8f")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(1028, 646)
 scale = Vector2(2, 2)
 texture = ExtResource("5_ledsr")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D6" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(371, 486)
 scale = Vector2(2, 2)
 texture = ExtResource("6_odxga")
 
-[node name="Sprite2D7" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D7" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(1201, 386)
 scale = Vector2(2, 2)
 texture = ExtResource("7_awnty")
 
-[node name="Sprite2D8" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D8" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(704, 204)
 scale = Vector2(2, 2)
 texture = ExtResource("8_yli8f")
 
-[node name="Sprite2D9" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D9" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(88, 352)
 scale = Vector2(2, 2)
 texture = ExtResource("5_ledsr")
 
-[node name="Sprite2D10" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D10" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(1216, 636)
 scale = Vector2(2, 2)
 texture = ExtResource("6_odxga")
 
-[node name="Sprite2D11" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D11" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(817, 680)
 scale = Vector2(2, 2)
 texture = ExtResource("7_awnty")
 
-[node name="Sprite2D12" type="Sprite2D" parent="Background_1/Silver"]
+[node name="Sprite2D12" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(171, 493)
 scale = Vector2(2, 2)
 texture = ExtResource("8_yli8f")
 
-[node name="Gold" type="Node2D" parent="Background_1"]
+[node name="Gold" type="Node2D" parent="Background"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(75, 661)
 scale = Vector2(2, 2)
 texture = ExtResource("9_foao3")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(576, 36)
 scale = Vector2(2, 2)
 texture = ExtResource("10_0djjy")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(143, 215)
 scale = Vector2(2, 2)
 texture = ExtResource("11_8fvur")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(15, 346)
 scale = Vector2(2, 2)
 texture = ExtResource("12_10bux")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(459, 219)
 scale = Vector2(2, 2)
 texture = ExtResource("9_foao3")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D6" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(265, 596)
 scale = Vector2(2, 2)
 texture = ExtResource("10_0djjy")
 
-[node name="Sprite2D7" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D7" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(912, 111)
 scale = Vector2(2, 2)
 texture = ExtResource("11_8fvur")
 
-[node name="Sprite2D8" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D8" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(1256, 221)
 scale = Vector2(2, 2)
 texture = ExtResource("12_10bux")
 
-[node name="Sprite2D9" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D9" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(914, 680)
 scale = Vector2(2, 2)
 texture = ExtResource("9_foao3")
 
-[node name="Sprite2D10" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D10" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(949, 425)
 scale = Vector2(2, 2)
 texture = ExtResource("10_0djjy")
 
-[node name="Sprite2D11" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D11" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(1172, 551)
 scale = Vector2(2, 2)
 texture = ExtResource("11_8fvur")
 
-[node name="Sprite2D12" type="Sprite2D" parent="Background_1/Gold"]
+[node name="Sprite2D12" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(1096, 4)
 scale = Vector2(2, 2)
 texture = ExtResource("12_10bux")
 
-[node name="Copper" type="Node2D" parent="Background_1"]
+[node name="Copper" type="Node2D" parent="Background"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(208, 701)
 scale = Vector2(2, 2)
 texture = ExtResource("13_v6c8f")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(55, 481)
 scale = Vector2(2, 2)
 texture = ExtResource("14_kn6wg")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(483, 558)
 scale = Vector2(2, 2)
 texture = ExtResource("15_56mna")
 
-[node name="Sprite2D4" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(980, 201)
 scale = Vector2(2, 2)
 texture = ExtResource("16_ritla")
 
-[node name="Sprite2D5" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(841, 533)
 scale = Vector2(2, 2)
 texture = ExtResource("13_v6c8f")
 
-[node name="Sprite2D6" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D6" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(68, 152)
 scale = Vector2(2, 2)
 texture = ExtResource("14_kn6wg")
 
-[node name="Sprite2D7" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D7" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(388, 81)
 scale = Vector2(2, 2)
 texture = ExtResource("15_56mna")
 
-[node name="Sprite2D8" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D8" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(1187, -56)
 scale = Vector2(2, 2)
 texture = ExtResource("16_ritla")
 
-[node name="Sprite2D9" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D9" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(1164, 268)
 scale = Vector2(2, 2)
 texture = ExtResource("13_v6c8f")
 
-[node name="Sprite2D10" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D10" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(1055, 515)
 scale = Vector2(2, 2)
 texture = ExtResource("14_kn6wg")
 
-[node name="Sprite2D11" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D11" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(208, 371)
 scale = Vector2(2, 2)
 texture = ExtResource("15_56mna")
 
-[node name="Sprite2D12" type="Sprite2D" parent="Background_1/Copper"]
+[node name="Sprite2D12" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(390, 344)
 scale = Vector2(2, 2)
 texture = ExtResource("16_ritla")

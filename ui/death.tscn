@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://fqdapsw82jan"]
+[gd_scene load_steps=19 format=3 uid="uid://fqdapsw82jan"]
 
 [ext_resource type="Script" uid="uid://mqgcc51fsls4" path="res://scipts/ui_scripts/death.gd" id="1_idxcp"]
-[ext_resource type="LabelSettings" uid="uid://b5g78ehpdy51c" path="res://ui/new_label_settings.tres" id="2_ltt6a"]
+[ext_resource type="FontFile" uid="uid://cntuisd1j68yb" path="res://res/Pixel Primitive.ttf" id="2_typ23"]
 [ext_resource type="Texture2D" uid="uid://b5mhyna6dowog" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[1] Normal.png" id="3_e0yab"]
 [ext_resource type="Texture2D" uid="uid://s8pg3i7q7it1" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[2] Clicked.png" id="4_gm063"]
 [ext_resource type="Texture2D" uid="uid://b2kyq1nnwxpqu" path="res://sprites/import/buttons/Individual Frames/[8] Wood/[3] Hover.png" id="5_ogb32"]
 [ext_resource type="Texture2D" uid="uid://baxk5on8e6ojf" path="res://sprites/items/silver_lump.png" id="6_typ23"]
+[ext_resource type="Script" uid="uid://bjrl8k6scaypy" path="res://ui/startButton.gd" id="6_wu81l"]
 [ext_resource type="Texture2D" uid="uid://8lphl2fq0kn1" path="res://sprites/items/silver_clock_hands.png" id="7_wu81l"]
 [ext_resource type="Texture2D" uid="uid://bhxp0vu566gcc" path="res://sprites/items/silver_chain.png" id="8_ghaif"]
 [ext_resource type="Texture2D" uid="uid://c85b3w0y150nd" path="res://sprites/items/shell_silver.png" id="9_yyjh0"]
@@ -27,240 +28,285 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_idxcp")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -34.0
+offset_right = 246.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_typ23")
+theme_override_font_sizes/font_size = 32
+text = "Your Reviews went down to 0!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="highscore" type="Label" parent="CanvasLayer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_typ23")
+theme_override_font_sizes/font_size = 32
+text = "HIGHSCORE: XXX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = 80.0
+offset_right = 258.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer2/HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("3_e0yab")
+texture_pressed = ExtResource("4_gm063")
+texture_hover = ExtResource("5_ogb32")
+stretch_mode = 5
+script = ExtResource("6_wu81l")
+
+[node name="Label" type="Label" parent="CanvasLayer2/HBoxContainer/TextureButton3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-text = "Your Reviews went down to 0!!!"
-label_settings = ExtResource("2_ltt6a")
+theme_override_fonts/font = ExtResource("2_typ23")
+theme_override_font_sizes/font_size = 24
+text = "RESTART"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+[node name="TextureButton4" type="TextureButton" parent="CanvasLayer2/HBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
 layout_mode = 2
-text = "HIGHSCORE: XXX Money Reached"
-label_settings = ExtResource("2_ltt6a")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/CenterContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer"]
-layout_mode = 2
+size_flags_vertical = 4
 texture_normal = ExtResource("3_e0yab")
 texture_pressed = ExtResource("4_gm063")
 texture_hover = ExtResource("5_ogb32")
+stretch_mode = 5
+script = ExtResource("6_wu81l")
 
-[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer/CenterContainer/TextureButton"]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 3.0
-offset_right = 43.0
-offset_bottom = 13.0
-text = "Restart"
-label_settings = ExtResource("2_ltt6a")
+[node name="Label" type="Label" parent="CanvasLayer2/HBoxContainer/TextureButton4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_typ23")
+theme_override_font_sizes/font_size = 24
+text = "EXIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
 
-[node name="Silver" type="Node2D" parent="CanvasLayer"]
+[node name="Silver" type="Node2D" parent="Background"]
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(205, 32)
 scale = Vector2(2, 2)
 texture = ExtResource("6_typ23")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(405, 668)
 scale = Vector2(2, 2)
 texture = ExtResource("7_wu81l")
 
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(881, 296)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ghaif")
 
-[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(291, 175)
 scale = Vector2(2, 2)
 texture = ExtResource("9_yyjh0")
 
-[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(1028, 646)
 scale = Vector2(2, 2)
 texture = ExtResource("6_typ23")
 
-[node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D6" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(371, 486)
 scale = Vector2(2, 2)
 texture = ExtResource("7_wu81l")
 
-[node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D7" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(1201, 386)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ghaif")
 
-[node name="Sprite2D8" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D8" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(704, 204)
 scale = Vector2(2, 2)
 texture = ExtResource("9_yyjh0")
 
-[node name="Sprite2D9" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D9" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(88, 352)
 scale = Vector2(2, 2)
 texture = ExtResource("6_typ23")
 
-[node name="Sprite2D10" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D10" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(1216, 636)
 scale = Vector2(2, 2)
 texture = ExtResource("7_wu81l")
 
-[node name="Sprite2D11" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D11" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(817, 680)
 scale = Vector2(2, 2)
 texture = ExtResource("8_ghaif")
 
-[node name="Sprite2D12" type="Sprite2D" parent="CanvasLayer/Silver"]
+[node name="Sprite2D12" type="Sprite2D" parent="Background/Silver"]
 position = Vector2(171, 493)
 scale = Vector2(2, 2)
 texture = ExtResource("9_yyjh0")
 
-[node name="Gold" type="Node2D" parent="CanvasLayer"]
+[node name="Gold" type="Node2D" parent="Background"]
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(75, 661)
 scale = Vector2(2, 2)
 texture = ExtResource("10_uv3go")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(576, 36)
 scale = Vector2(2, 2)
 texture = ExtResource("11_v20ds")
 
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(143, 215)
 scale = Vector2(2, 2)
 texture = ExtResource("12_18atc")
 
-[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(15, 346)
 scale = Vector2(2, 2)
 texture = ExtResource("13_4p3ck")
 
-[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(459, 219)
 scale = Vector2(2, 2)
 texture = ExtResource("10_uv3go")
 
-[node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D6" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(265, 596)
 scale = Vector2(2, 2)
 texture = ExtResource("11_v20ds")
 
-[node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D7" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(912, 111)
 scale = Vector2(2, 2)
 texture = ExtResource("12_18atc")
 
-[node name="Sprite2D8" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D8" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(1256, 221)
 scale = Vector2(2, 2)
 texture = ExtResource("13_4p3ck")
 
-[node name="Sprite2D9" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D9" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(914, 680)
 scale = Vector2(2, 2)
 texture = ExtResource("10_uv3go")
 
-[node name="Sprite2D10" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D10" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(949, 425)
 scale = Vector2(2, 2)
 texture = ExtResource("11_v20ds")
 
-[node name="Sprite2D11" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D11" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(1172, 551)
 scale = Vector2(2, 2)
 texture = ExtResource("12_18atc")
 
-[node name="Sprite2D12" type="Sprite2D" parent="CanvasLayer/Gold"]
+[node name="Sprite2D12" type="Sprite2D" parent="Background/Gold"]
 position = Vector2(1096, 4)
 scale = Vector2(2, 2)
 texture = ExtResource("13_4p3ck")
 
-[node name="Copper" type="Node2D" parent="CanvasLayer"]
+[node name="Copper" type="Node2D" parent="Background"]
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(208, 701)
 scale = Vector2(2, 2)
 texture = ExtResource("14_i712v")
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(55, 481)
 scale = Vector2(2, 2)
 texture = ExtResource("15_0kr85")
 
-[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D3" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(483, 558)
 scale = Vector2(2, 2)
 texture = ExtResource("16_dnlm1")
 
-[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D4" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(980, 201)
 scale = Vector2(2, 2)
 texture = ExtResource("17_8waew")
 
-[node name="Sprite2D5" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D5" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(841, 533)
 scale = Vector2(2, 2)
 texture = ExtResource("14_i712v")
 
-[node name="Sprite2D6" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D6" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(68, 152)
 scale = Vector2(2, 2)
 texture = ExtResource("15_0kr85")
 
-[node name="Sprite2D7" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D7" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(388, 81)
 scale = Vector2(2, 2)
 texture = ExtResource("16_dnlm1")
 
-[node name="Sprite2D8" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D8" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(1187, -56)
 scale = Vector2(2, 2)
 texture = ExtResource("17_8waew")
 
-[node name="Sprite2D9" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D9" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(1164, 268)
 scale = Vector2(2, 2)
 texture = ExtResource("14_i712v")
 
-[node name="Sprite2D10" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D10" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(1055, 515)
 scale = Vector2(2, 2)
 texture = ExtResource("15_0kr85")
 
-[node name="Sprite2D11" type="Sprite2D" parent="CanvasLayer/Copper"]
+[node name="Sprite2D11" type="Sprite2D" parent="Background/Copper"]
 position = Vector2(208, 371)
 scale = Vector2(2, 2)
 texture = ExtResource("16_dnlm1")
 
-[node name="Sprite2D12" type="Sprite2D" parent="CanvasLayer/Copper"]
-position = Vector2(390, 344)
+[node name="Sprite2D12" type="Sprite2D" parent="Background/Copper"]
+position = Vector2(357, 304)
 scale = Vector2(2, 2)
 texture = ExtResource("17_8waew")
 
-[connection signal="pressed" from="MarginContainer/CenterContainer/VBoxContainer/CenterContainer/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer2/HBoxContainer/TextureButton3" to="." method="onRestart"]
+[connection signal="pressed" from="CanvasLayer2/HBoxContainer/TextureButton4" to="." method="onExit"]
