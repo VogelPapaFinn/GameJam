@@ -47,6 +47,7 @@ animations = [{
 }]
 
 [node name="Chain_creator" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_mqe7t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -54,6 +55,7 @@ position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_k1vos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_f0k10")
 
 [node name="Timer" type="Timer" parent="."]
@@ -76,9 +78,11 @@ offset_right = -16.0
 offset_bottom = -54.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_lsp8t")
 animation = &"working"
-frame_progress = 0.961508
+offset = Vector2(0, 32)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interact_area_entered"]

@@ -11,10 +11,14 @@ size = Vector2(64, 60)
 size = Vector2(25, 26)
 
 [node name="Gold_dispenser" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_xtr0u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -16)
 texture = ExtResource("2_4btkw")
+offset = Vector2(0, 16)
 
 [node name="InteractionArea" type="Area2D" parent="."]
 script = ExtResource("2_vkety")

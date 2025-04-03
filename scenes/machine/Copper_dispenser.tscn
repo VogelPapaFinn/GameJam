@@ -11,10 +11,14 @@ size = Vector2(48, 44)
 size = Vector2(25, 26)
 
 [node name="Copper_dispenser" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_plxs6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -16)
 texture = ExtResource("2_qwgw5")
+offset = Vector2(0, 16)
 
 [node name="InteractionArea" type="Area2D" parent="."]
 script = ExtResource("2_o5vkn")
