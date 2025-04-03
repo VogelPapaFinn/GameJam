@@ -26,7 +26,7 @@ func _ready() -> void:
 	current_inventory = inventory.new()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Interact") or (is_player_2 and Input.is_action_just_pressed("pl2interact")):
+	if (!is_player_2 and Input.is_action_just_pressed("Interact")) or (is_player_2 and Input.is_action_just_pressed("pl2interact")):
 		var areas = $PickupArea.get_overlapping_areas()
 		var current_area : Area2D
 		if len(areas) != 0:
