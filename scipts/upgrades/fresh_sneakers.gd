@@ -4,7 +4,7 @@ extends Button
 var cost = 15
 
 func _ready() -> void:
-	self.text = self.text + " - $" + str(cost)
+	self.text = self.text + "$" + str(cost)
 
 func _on_mouse_enter():
 	sneakers_label.visible = true

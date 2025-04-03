@@ -5,7 +5,7 @@ var tv_scene = preload("res://scenes/upgrades/tv.tscn")
 var cost = 15
 
 func _ready() -> void:
-	self.text = self.text + " - $" + str(cost)
+	self.text = self.text + "$" + str(cost)
 
 func _on_mouse_enter():
 	tv_label.visible = true
