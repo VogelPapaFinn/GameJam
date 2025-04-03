@@ -103,7 +103,7 @@ func _on_timer_timeout() -> void:
 	new_clock.get_node("shell").texture = current_shell.get_sprite()
 	new_clock.get_node("chain").texture = current_chain.get_finished_sprite()
 	new_clock.get_node("pointer").texture = current_pointer.get_finished_sprite()
-	
+	new_clock.product = Clock_product.new(current_chain, current_shell, current_pointer)
 	new_clock.position = $Finished_position.position
 	finished_product = new_clock
 	current_shell = null
