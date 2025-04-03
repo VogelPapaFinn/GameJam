@@ -18,9 +18,9 @@ func use(usable: Usable) -> Usable:
 			active_shell.hide()
 			var tmp = active_shell
 			active_shell = null
-			return usable 
+			return tmp
 		else:
-			return null
+			return usable 
 
 	if usable is not Raw_material:
 		return usable 
