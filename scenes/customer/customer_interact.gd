@@ -20,10 +20,10 @@ func interact(usable: Usable) -> Usable:
 		print(order.band.raw_material)
 		print("not right band")
 		return usable
-	if usable.product.shell.raw_material != order.band.raw_material:
+	if usable.product.shell.raw_material != order.shell.raw_material:
 		print("not right shell")
 		return usable
-	if usable.product.pointer.raw_material != order.band.raw_material:
+	if usable.product.pointer.raw_material != order.pointer.raw_material:
 		print("not right pointer")
 		return usable
 	$".".get_parent().get_parent().order_recieved()
