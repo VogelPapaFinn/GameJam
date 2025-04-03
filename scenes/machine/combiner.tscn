@@ -22,7 +22,7 @@ size = Vector2(81, 28)
 size = Vector2(87, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_irnnw"]
-size = Vector2(76, 45)
+size = Vector2(76, 63)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y63fp"]
 atlas = ExtResource("5_umbwf")
@@ -118,21 +118,21 @@ shape = SubResource("RectangleShape2D_j7a5e")
 script = ExtResource("2_fmhbr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shell_area"]
-position = Vector2(0, -39)
+position = Vector2(0, -55)
 shape = SubResource("RectangleShape2D_y63fp")
 
 [node name="Chain_area" type="Area2D" parent="."]
 script = ExtResource("3_umbwf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Chain_area"]
-position = Vector2(0, -7)
+position = Vector2(0, -23)
 shape = SubResource("RectangleShape2D_u605p")
 
 [node name="Pointer_area" type="Area2D" parent="."]
 script = ExtResource("4_ghmsf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pointer_area"]
-position = Vector2(0, 23)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_ern1i")
 
 [node name="Finished_position" type="Marker2D" parent="."]
@@ -142,7 +142,7 @@ position = Vector2(-29, 59)
 script = ExtResource("5_ghmsf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pickup_area"]
-position = Vector2(0, 61.5)
+position = Vector2(0, 54.5)
 shape = SubResource("RectangleShape2D_irnnw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

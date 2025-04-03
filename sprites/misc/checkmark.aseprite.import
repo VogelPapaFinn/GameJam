@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b73n4myttqsew"
+path="res://.godot/imported/checkmark.aseprite-4921ee78a3ac9f04ee7571e838d93c65.res"
+
+[deps]
+
+source_file="res://sprites/misc/checkmark.aseprite"
+dest_files=["res://.godot/imported/checkmark.aseprite-4921ee78a3ac9f04ee7571e838d93c65.res"]
+
+[params]
+

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cnwm7qf7roa1k"]
+[gd_scene load_steps=27 format=4 uid="uid://cnwm7qf7roa1k"]
 
 [ext_resource type="PackedScene" uid="uid://cwiclkrfmwisa" path="res://scenes/machine/trashcan.tscn" id="1_4qegb"]
 [ext_resource type="Script" uid="uid://ekxr8m0oexg3" path="res://scipts/level.gd" id="1_iw3v5"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b6onrrdoypl6l" path="res://scenes/upgrades/tv.tscn" id="9_gips2"]
 [ext_resource type="Script" uid="uid://dqpa78yua06c7" path="res://scipts/upgrades/oil.gd" id="9_xyj84"]
 [ext_resource type="PackedScene" uid="uid://bygfqsp4s4s1r" path="res://scenes/machine/Silver_dispenser.tscn" id="10_sv41r"]
+[ext_resource type="Texture2D" uid="uid://bq7w2rfsfjh67" path="res://sprites/misc/checkmark.png" id="11_0akr6"]
 [ext_resource type="PackedScene" uid="uid://fvflaq7sw8v5" path="res://scenes/machine/pointer_creator.tscn" id="11_ax7ne"]
 [ext_resource type="Script" uid="uid://cheoc6v20052a" path="res://scipts/upgrades/fresh_sneakers.gd" id="11_wsd7d"]
 [ext_resource type="PackedScene" uid="uid://cry7grcda8fxw" path="res://scenes/machine/Shell_creator.tscn" id="12_sv41r"]
@@ -144,6 +145,12 @@ z_index = 1
 position = Vector2(324, 288)
 scale = Vector2(2, 2)
 
+[node name="checkmark" type="Sprite2D" parent="GUIRoot/UpgradesMenu/TV"]
+visible = false
+position = Vector2(173, 33)
+scale = Vector2(2, 2)
+texture = ExtResource("11_0akr6")
+
 [node name="Oil" type="Button" parent="GUIRoot/UpgradesMenu" node_paths=PackedStringArray("oil_label")]
 offset_left = 30.0
 offset_top = 234.0
@@ -169,6 +176,12 @@ text = "An old machine will appreciate
 its gears greased"
 vertical_alignment = 1
 
+[node name="checkmark" type="Sprite2D" parent="GUIRoot/UpgradesMenu/Oil"]
+visible = false
+position = Vector2(173, 33)
+scale = Vector2(2, 2)
+texture = ExtResource("11_0akr6")
+
 [node name="Fresh Sneakers" type="Button" parent="GUIRoot/UpgradesMenu" node_paths=PackedStringArray("sneakers_label")]
 offset_left = 30.0
 offset_top = 333.0
@@ -176,7 +189,7 @@ offset_right = 236.0
 offset_bottom = 399.0
 theme_override_fonts/font = ExtResource("6_dke22")
 theme_override_font_sizes/font_size = 28
-text = "Fresh Sneakers"
+text = "Sneakers"
 script = ExtResource("11_wsd7d")
 sneakers_label = NodePath("Label")
 
@@ -192,6 +205,12 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_iw3v5")
 text = "Shiny boots for an old champ"
 vertical_alignment = 1
+
+[node name="checkmark" type="Sprite2D" parent="GUIRoot/UpgradesMenu/Fresh Sneakers"]
+visible = false
+position = Vector2(173, 33)
+scale = Vector2(2, 2)
+texture = ExtResource("11_0akr6")
 
 [node name="Text" type="Label" parent="GUIRoot/UpgradesMenu"]
 offset_left = 30.0
