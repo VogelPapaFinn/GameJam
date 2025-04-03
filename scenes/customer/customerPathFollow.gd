@@ -47,8 +47,8 @@ func init(id: int, _character: CharacterBody2D, _wait_time):
 		order_point = stop_point
 	
 
-func update_queue():
-	if qid > 0:
+func update_queue(_qid):
+	if qid > _qid:
 		qid -= 1
 		stop_point = last_point - qid * 64
 		if qid < counter_num:
@@ -114,7 +114,7 @@ func _on_continue_signal():
 	character.speech_bubble_visible(false)
 	item_sprite.visible = false
 	var parent = get_parent()
-	parent.on_customer_leave()
+	parent.on_customer_leave(qid)
 
 func order_recieved():
 	Scenemanager.star_manager.customer_left_happy(timer.time_left, wait_time)
