@@ -11,6 +11,8 @@ func _ready():
 
 
 func use(usable: Usable) -> Usable:
+	if in_progress:
+		return null
 	if active_pointer:
 		if !usable:
 			active_pointer.hide()
@@ -18,7 +20,7 @@ func use(usable: Usable) -> Usable:
 			active_pointer = null
 			return tmp 
 		else:
-			return null
+			return usable 
 
 	if usable is not Raw_material:
 		return usable 

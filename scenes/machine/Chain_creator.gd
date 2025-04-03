@@ -11,6 +11,8 @@ func _ready():
 
 
 func use(usable: Usable) -> Usable:
+	if in_progress:
+		return usable
 	if active_chain:
 		if !usable:
 			active_chain.hide()
@@ -18,7 +20,8 @@ func use(usable: Usable) -> Usable:
 			active_chain = null
 			return tmp 
 		else:
-			return null
+			return usable
+
 
 	if usable is not Raw_material:
 		return usable 

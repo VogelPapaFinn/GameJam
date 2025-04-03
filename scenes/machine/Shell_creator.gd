@@ -11,12 +11,14 @@ func _ready():
 
 
 func use(usable: Usable) -> Usable:
+	if in_progress:
+		return usable
 	if active_shell:
 		if !usable:
 			active_shell.hide()
 			var tmp = active_shell
 			active_shell = null
-			return tmp 
+			return usable 
 		else:
 			return null
 
