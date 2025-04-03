@@ -16,9 +16,9 @@ var timer: Timer
 var stopped = false
 var leave = false
 var ordered = false
-const last_point = 750
-var order_point = 614
-var stop_point = 614  # The position where the character stops
+const last_point = 800
+var order_point = 800
+var stop_point = 800  # The position where the character stops
 var wait_time = 30.0  # Time to wait before continuing
 var qid = 0
 var order: Clock_product
