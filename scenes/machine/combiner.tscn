@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://beh72fldmdwss"]
+[gd_scene load_steps=22 format=3 uid="uid://beh72fldmdwss"]
 
 [ext_resource type="Script" uid="uid://wox80da5j3bc" path="res://scipts/machine_scripts/combiner_script.gd" id="1_4u47f"]
 [ext_resource type="Script" uid="uid://j6h2whbyd5k0" path="res://scipts/interact.gd" id="2_fmhbr"]

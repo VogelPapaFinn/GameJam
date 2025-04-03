@@ -19,10 +19,10 @@ var pointer = preload("res://scenes/pointer.tscn")
 var move_items: bool = false
 
 func _ready() -> void:
-	$Chain_area.machine	= self
-	$Pointer_area.machine =	self
-	$Shell_area.machine	= self
-	$Pickup_area.machine = self
+#	$Chain_area.machine	= self
+#	$Pointer_area.machine =	self
+#	$Shell_area.machine	= self
+#	$Pickup_area.machine = self
 	
 	$transparent_chain.global_position = $chain_position.global_position
 	$transparent_pointer.global_position = $pointer_position.global_position
