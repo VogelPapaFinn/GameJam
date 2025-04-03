@@ -96,6 +96,7 @@ animations = [{
 }]
 
 [node name="Shell_creator" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_uwq58")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -125,9 +126,12 @@ offset_right = -16.0
 offset_bottom = -53.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_bjqbw")
 animation = &"working"
 frame_progress = 0.61213
+offset = Vector2(0, 32)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="InteractionArea" to="." method="_on_interact_area_entered"]

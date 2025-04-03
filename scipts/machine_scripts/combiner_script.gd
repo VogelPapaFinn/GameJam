@@ -10,6 +10,7 @@ var	finished_product
 var display_shell
 var display_pointer
 var display_chain
+
 var	finished_clock	= preload("res://scenes/item/finished_clock.tscn")
 var chain = preload("res://scenes/item/chain.tscn")
 #var shell = preload("res://scenes/item/Clock_shell.gd")
@@ -18,12 +19,26 @@ var pointer = preload("res://scenes/pointer.tscn")
 var move_items: bool = false
 
 func _ready() -> void:
-	$Chain_area.machine	= self
-	$Pointer_area.machine =	self
-	$Shell_area.machine	= self
-	$Pickup_area.machine = self
+#	$Chain_area.machine	= self
+#	$Pointer_area.machine =	self
+#	$Shell_area.machine	= self
+#	$Pickup_area.machine = self
+	
+	$transparent_chain.global_position = $chain_position.global_position
+	$transparent_pointer.global_position = $pointer_position.global_position
+	$transparent_shell.global_position = $shell_position.global_position
+	
+	$AnimatedSprite2D.play("idle")
+	$interact.machine = self
 
 func use(item: Usable) -> Usable:
+	if !item:
+		if !finished_product:
+			return null
+		finished_product.position = Vector2(0,0)
+		var	tmp	= finished_product
+		finished_product = null
+		return tmp
 	if item.is_in_group("shell"):
 		if current_shell:
 			return item
@@ -79,18 +94,14 @@ func check_for_full():
 		$Timer.wait_time = timer_length
 		print($Timer.wait_time)
 		$Timer.start()
+		
+		$transparent_chain.visible = false
+		$transparent_shell.visible = false
+		$transparent_pointer.visible = false
+		
 		$AnimatedSprite2D.play("working")
 		in_progress = true
 		
-		
-		
-func pick_up() -> Usable:
-	if !finished_product:
-		return null
-	finished_product.position = Vector2(0,0)
-	var	tmp	= finished_product
-	finished_product = null
-	return tmp
 
 func _on_timer_timeout() -> void:
 	#print("timer ended")
@@ -98,12 +109,15 @@ func _on_timer_timeout() -> void:
 	in_progress = false
 	
 	$AnimatedSprite2D.play("idle")
+	$transparent_chain.visible = false
+	$transparent_shell.visible = false
+	$transparent_pointer.visible = false
 	
 	var	new_clock =	finished_clock.instantiate()
 	new_clock.get_node("shell").texture = current_shell.get_sprite()
 	new_clock.get_node("chain").texture = current_chain.get_finished_sprite()
 	new_clock.get_node("pointer").texture = current_pointer.get_finished_sprite()
-	
+	new_clock.product = Clock_product.new(current_chain, current_shell, current_pointer)
 	new_clock.position = $Finished_position.position
 	finished_product = new_clock
 	current_shell = null

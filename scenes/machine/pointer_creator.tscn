@@ -75,9 +75,12 @@ animations = [{
 }]
 
 [node name="Pointer_creator" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_g2ine")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+y_sort_enabled = true
 texture = ExtResource("2_dkw2c")
 
 [node name="InteractionArea" type="Area2D" parent="."]
@@ -96,15 +99,20 @@ wait_time = 10.0
 one_shot = true
 
 [node name="Finish_position" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Loading_bar" parent="." instance=ExtResource("4_dkw2c")]
+y_sort_enabled = true
 offset_left = -16.0
 offset_top = -53.0
 offset_right = -16.0
 offset_bottom = -53.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_0gieh")
 animation = &"idle"
+offset = Vector2(0, 32)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

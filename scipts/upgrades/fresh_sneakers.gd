@@ -19,3 +19,4 @@ func _on_pressed():
 		self.set_disabled(true)
 		Scenemanager.pl1._on_sneakers_btn_pressed()
 		Scenemanager.pl2._on_sneakers_btn_pressed()
+		self.release_focus()
