@@ -293,7 +293,7 @@ _data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAACIAAAAUklGRoAAAABXRUJQVlA4THM
 size_override = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8noaa"]
-size = Vector2(30, 90)
+size = Vector2(40, 101)
 
 [node name="Customer" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite_2d", "collision_shape_2d", "speech_bubble")]
 collision_layer = 2
@@ -353,4 +353,5 @@ position = Vector2(0, -46)
 script = ExtResource("2_duem0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -5.5)
 shape = SubResource("RectangleShape2D_8noaa")

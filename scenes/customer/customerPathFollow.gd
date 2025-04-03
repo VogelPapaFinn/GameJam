@@ -16,7 +16,7 @@ var timer: Timer
 var stopped = false
 var leave = false
 var ordered = false
-const last_point = 700
+const last_point = 750
 var order_point = 614
 var stop_point = 614  # The position where the character stops
 var wait_time = 30.0  # Time to wait before continuing
@@ -48,10 +48,11 @@ func init(id: int, _character: CharacterBody2D, _wait_time):
 	
 
 func update_queue():
-	qid -= 1
-	stop_point = last_point - qid * 64
-	if qid < counter_num:
-		order_point = stop_point
+	if qid > 0:
+		qid -= 1
+		stop_point = last_point - qid * 64
+		if qid < counter_num:
+			order_point = stop_point
 	stopped = false
 
 func get_order():
